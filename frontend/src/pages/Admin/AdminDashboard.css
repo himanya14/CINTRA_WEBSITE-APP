@@ -1,0 +1,1094 @@
+/* =========================================================
+   CINTRA — ADMIN DASHBOARD
+   ========================================================= */
+
+.admin-page {
+  min-height: 100vh;
+  background: #f4f6f9;
+  color: #15213a;
+  font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.admin-header {
+  height: 68px;
+  padding: 0 42px;
+
+  background: #071b46;
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 3px solid #b68a32;
+}
+
+.admin-brand,
+.admin-header-right,
+.admin-identity,
+.admin-brand > div:last-child {
+  display: flex;
+}
+
+.admin-brand,
+.admin-header-right {
+  align-items: center;
+}
+
+.admin-brand {
+  gap: 12px;
+}
+
+.admin-mark {
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.admin-mark svg {
+  width: 21px;
+}
+
+.admin-brand > div:last-child,
+.admin-identity {
+  flex-direction: column;
+}
+
+.admin-brand strong {
+  font-family: Georgia, serif;
+  font-size: 21px;
+  letter-spacing: 0.12em;
+}
+
+.admin-brand span {
+  margin-top: 2px;
+
+  color: #cbd4e4;
+
+  font-size: 11px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.admin-header-right {
+  gap: 22px;
+}
+
+.admin-identity {
+  text-align: right;
+}
+
+.admin-identity strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.admin-identity span {
+  margin-top: 3px;
+
+  color: #c6d0df;
+
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   COMMON BUTTON RESET
+   ========================================================= */
+
+.admin-logout,
+.admin-refresh,
+.admin-row-button,
+.admin-actions button,
+.admin-primary-button,
+.admin-secondary-button,
+.admin-close-button {
+  font: inherit;
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   LOGOUT
+   ========================================================= */
+
+.admin-logout {
+  min-height: 35px;
+  padding: 0 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  background: transparent;
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.admin-logout:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   ADMIN NAVIGATION
+   ========================================================= */
+
+.admin-navigation {
+  min-height: 47px;
+  padding: 0 42px;
+
+  display: flex;
+  align-items: stretch;
+  gap: 3px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #d7dde7;
+}
+
+.admin-navigation button {
+  padding: 0 18px;
+
+  border: 0;
+  border-bottom: 3px solid transparent;
+
+  background: transparent;
+  color: #4a566b;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-navigation button:hover {
+  color: #071b46;
+  background: #f8f9fb;
+}
+
+.admin-navigation button.active {
+  color: #071b46;
+  border-bottom-color: #b68a32;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.admin-content {
+  width: min(1480px, calc(100% - 64px));
+
+  margin: 0 auto;
+  padding: 32px 0 40px;
+}
+
+
+/* =========================================================
+   PAGE HEADING
+   ========================================================= */
+
+.admin-page-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  gap: 25px;
+
+  margin-bottom: 24px;
+}
+
+.admin-eyebrow {
+  color: #9a7022;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.admin-page-heading h1 {
+  margin: 6px 0 7px;
+
+  font-family: Georgia, serif;
+
+  color: #0b1d43;
+
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.admin-page-heading p {
+  margin: 0;
+
+  color: #647086;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   REFRESH BUTTON
+   ========================================================= */
+
+.admin-refresh {
+  height: 37px;
+  padding: 0 15px;
+
+  border: 1px solid #c8d0dc;
+
+  background: #ffffff;
+  color: #233554;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-refresh:hover:not(:disabled) {
+  background: #f1f4f8;
+}
+
+
+/* =========================================================
+   SUMMARY STRIP
+   ========================================================= */
+
+.admin-summary-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  margin-bottom: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #d8dee8;
+}
+
+.admin-summary-strip > div {
+  min-height: 78px;
+  padding: 17px 20px;
+
+  border-right: 1px solid #e0e5ec;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.admin-summary-strip > div:last-child {
+  border-right: 0;
+}
+
+.admin-summary-strip span {
+  color: #69758a;
+
+  font-size: 11px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.admin-summary-strip strong {
+  margin-top: 5px;
+
+  color: #0c204b;
+
+  font-family: Georgia, serif;
+
+  font-size: 23px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.admin-message {
+  margin-bottom: 16px;
+  padding: 11px 14px;
+
+  background: #fff8e9;
+
+  border: 1px solid #e3c981;
+
+  color: #614b16;
+
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.admin-section {
+  background: #ffffff;
+
+  border: 1px solid #d8dee8;
+}
+
+.admin-section-header {
+  min-height: 70px;
+  padding: 15px 20px;
+
+  border-bottom: 1px solid #dfe4eb;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+}
+
+.admin-section-header h2 {
+  margin: 0;
+
+  color: #14274d;
+
+  font-family: Georgia, serif;
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.admin-section-header p {
+  margin: 4px 0 0;
+
+  color: #778196;
+
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* Default decorative section icon */
+.admin-section-header > svg {
+  color: #9a7022;
+}
+
+
+/* =========================================================
+   SECTION TOOLS
+   ========================================================= */
+
+.admin-section-tools {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+   ========================================================= */
+
+.admin-primary-button {
+  min-height: 36px;
+  padding: 0 15px;
+
+  border: 1px solid #071b46;
+
+  background: #071b46;
+  color: #ffffff;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  font-size: 11px;
+  font-weight: 650;
+
+  letter-spacing: 0.01em;
+
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.admin-primary-button svg,
+.admin-section-header .admin-primary-button svg {
+  color: #ffffff;
+}
+
+.admin-primary-button:hover:not(:disabled) {
+  background: #0c2a61;
+  border-color: #0c2a61;
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON
+   ========================================================= */
+
+.admin-secondary-button {
+  min-height: 36px;
+  padding: 0 15px;
+
+  border: 1px solid #c8d0dc;
+
+  background: #ffffff;
+  color: #263651;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.admin-secondary-button:hover:not(:disabled) {
+  background: #f1f4f8;
+}
+
+.admin-primary-button:disabled,
+.admin-secondary-button:disabled,
+.admin-refresh:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   CREATE OFFICER PANEL
+   ========================================================= */
+
+.admin-create-panel {
+  padding: 21px 20px 23px;
+
+  background: #f8f9fb;
+
+  border-bottom: 1px solid #dfe4eb;
+}
+
+
+/* =========================================================
+   CREATE OFFICER HEADING
+   ========================================================= */
+
+.admin-create-heading {
+  margin-bottom: 19px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.admin-create-heading h3 {
+  margin: 0;
+
+  color: #14274d;
+
+  font-family: Georgia, serif;
+
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.admin-create-heading p {
+  max-width: 620px;
+
+  margin: 5px 0 0;
+
+  color: #778196;
+
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+   ========================================================= */
+
+.admin-close-button {
+  width: 31px;
+  height: 31px;
+
+  padding: 0;
+
+  border: 1px solid #cbd2dc;
+
+  background: #ffffff;
+  color: #526078;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 20px;
+  line-height: 1;
+}
+
+.admin-close-button:hover {
+  background: #f0f3f7;
+  color: #071b46;
+}
+
+
+/* =========================================================
+   CREATE OFFICER FORM
+   ========================================================= */
+
+.admin-officer-form {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 15px 16px;
+}
+
+.admin-officer-form label {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.admin-officer-form label > span {
+  color: #536078;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+
+/* =========================================================
+   FORM CONTROLS
+   ========================================================= */
+
+.admin-officer-form input,
+.admin-officer-form select {
+  width: 100%;
+  height: 38px;
+
+  box-sizing: border-box;
+
+  padding: 0 10px;
+
+  border: 1px solid #cbd2dc;
+  border-radius: 0;
+
+  outline: none;
+
+  background: #ffffff;
+  color: #1d2d49;
+
+  font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    sans-serif;
+
+  font-size: 12px;
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.admin-officer-form input::placeholder {
+  color: #a0a8b6;
+}
+
+.admin-officer-form input:hover,
+.admin-officer-form select:hover {
+  border-color: #aeb8c7;
+}
+
+.admin-officer-form input:focus,
+.admin-officer-form select:focus {
+  border-color: #526d99;
+
+  box-shadow:
+    0 0 0 2px rgba(7, 27, 70, 0.07);
+}
+
+
+/* =========================================================
+   SECURITY NOTE
+   ========================================================= */
+
+.admin-form-note {
+  grid-column: 1 / 3;
+
+  min-height: 38px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #667289;
+
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.admin-form-note svg {
+  flex-shrink: 0;
+  color: #9a7022;
+}
+
+
+/* =========================================================
+   FORM ACTIONS
+   ========================================================= */
+
+.admin-form-actions {
+  grid-column: 3 / 5;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 8px;
+}
+
+
+/* =========================================================
+   OFFICER TABLE
+   ========================================================= */
+
+.admin-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  font-size: 12px;
+}
+
+.admin-table th {
+  padding: 11px 13px;
+
+  background: #f6f7f9;
+
+  border-bottom: 1px solid #d9dee6;
+
+  color: #59657a;
+
+  font-size: 10px;
+  text-align: left;
+
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  white-space: nowrap;
+}
+
+.admin-table td {
+  padding: 13px;
+
+  border-bottom: 1px solid #e6e9ee;
+
+  color: #354159;
+
+  vertical-align: middle;
+}
+
+.admin-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.admin-table tbody tr:hover {
+  background: #fafbfd;
+}
+
+
+/* =========================================================
+   OFFICER CELL
+   ========================================================= */
+
+.admin-officer-cell {
+  min-width: 150px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-officer-cell strong {
+  color: #172a50;
+
+  font-weight: 650;
+}
+
+.admin-officer-cell span {
+  margin-top: 3px;
+
+  color: #788398;
+
+  font-family: Consolas, monospace;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   TABLE ROLE SELECT
+   ========================================================= */
+
+.admin-table select {
+  min-width: 142px;
+  height: 31px;
+
+  padding: 0 8px;
+
+  border: 1px solid #cbd2dc;
+
+  background: #ffffff;
+  color: #263651;
+
+  font-size: 11px;
+}
+
+.admin-table select:focus {
+  outline: none;
+
+  border-color: #526d99;
+
+  box-shadow:
+    0 0 0 2px rgba(7, 27, 70, 0.06);
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.admin-status {
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.admin-status.active {
+  color: #22623c;
+}
+
+.admin-status.inactive {
+  color: #8b3030;
+}
+
+
+/* =========================================================
+   ROW ACTIONS
+   ========================================================= */
+
+.admin-actions {
+  min-width: 245px;
+
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.admin-actions button,
+.admin-row-button {
+  padding: 6px 8px;
+
+  border: 1px solid #cbd2dc;
+
+  background: #ffffff;
+  color: #243652;
+
+  font-size: 10px;
+}
+
+.admin-actions button:hover:not(:disabled),
+.admin-row-button:hover:not(:disabled) {
+  background: #f1f4f8;
+}
+
+.admin-actions button:disabled,
+.admin-row-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+
+/* =========================================================
+   EMPTY / LOADING STATES
+   ========================================================= */
+
+.admin-empty,
+.admin-loading {
+  padding: 35px !important;
+
+  color: #7b8596 !important;
+
+  text-align: center !important;
+}
+
+.admin-loading {
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.admin-footer {
+  min-height: 45px;
+  padding: 0 42px;
+
+  background: #ffffff;
+
+  border-top: 1px solid #d8dee8;
+
+  color: #758094;
+
+  font-size: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   REFRESH ANIMATION
+   ========================================================= */
+
+.admin-spinning {
+  animation: admin-spin 1s linear infinite;
+}
+
+@keyframes admin-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1150px) {
+  .admin-officer-form {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-form-note,
+  .admin-form-actions {
+    grid-column: 1 / -1;
+  }
+
+  .admin-form-actions {
+    justify-content: flex-end;
+  }
+}
+
+
+/* =========================================================
+   SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .admin-header,
+  .admin-navigation,
+  .admin-footer {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .admin-content {
+    width: calc(100% - 30px);
+  }
+
+  .admin-summary-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .admin-summary-strip > div:nth-child(2) {
+    border-right: 0;
+  }
+
+  .admin-summary-strip > div:nth-child(-n + 2) {
+    border-bottom: 1px solid #e0e5ec;
+  }
+
+  .admin-header-right .admin-identity {
+    display: none;
+  }
+
+  .admin-navigation {
+    overflow-x: auto;
+  }
+
+  .admin-navigation button {
+    min-height: 47px;
+    white-space: nowrap;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .admin-header {
+    height: 62px;
+  }
+
+  .admin-brand strong {
+    font-size: 18px;
+  }
+
+  .admin-brand span {
+    font-size: 9px;
+  }
+
+  .admin-mark {
+    width: 34px;
+    height: 34px;
+  }
+
+  .admin-logout {
+    padding: 0 10px;
+  }
+
+  .admin-page-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-page-heading h1 {
+    font-size: 25px;
+  }
+
+  .admin-refresh {
+    align-self: flex-start;
+  }
+
+  .admin-section-header {
+    align-items: flex-start;
+  }
+
+  .admin-section-tools {
+    gap: 9px;
+  }
+
+  .admin-section-tools > svg {
+    display: none;
+  }
+
+  .admin-create-panel {
+    padding: 18px 15px 20px;
+  }
+
+  .admin-create-heading {
+    margin-bottom: 17px;
+  }
+
+  .admin-officer-form {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-form-note,
+  .admin-form-actions {
+    grid-column: 1;
+  }
+
+  .admin-form-actions {
+    justify-content: stretch;
+  }
+
+  .admin-form-actions button {
+    flex: 1;
+  }
+
+  .admin-footer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 4px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 520px) {
+  .admin-content {
+    width: calc(100% - 20px);
+    padding-top: 22px;
+  }
+
+  .admin-summary-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-summary-strip > div {
+    border-right: 0;
+    border-bottom: 1px solid #e0e5ec;
+  }
+
+  .admin-summary-strip > div:last-child {
+    border-bottom: 0;
+  }
+
+  .admin-section-header {
+    flex-direction: column;
+  }
+
+  .admin-section-tools {
+    width: 100%;
+  }
+
+  .admin-primary-button {
+    width: 100%;
+  }
+
+  .admin-actions {
+    min-width: 210px;
+  }
+}

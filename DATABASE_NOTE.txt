@@ -1,0 +1,5 @@
+CINTRA uses ONE runtime database only:
+  PostgreSQL -> cintra_db -> configured by backend/.env DATABASE_URL
+
+There is no mobile database, SQLite runtime database, or second SQL dump in this build.
+Website and mobile both use the same FastAPI backend and PostgreSQL source of truth.

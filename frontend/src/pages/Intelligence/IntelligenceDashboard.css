@@ -1,0 +1,1288 @@
+/* =========================================================
+   CINTRA — INTELLIGENCE DASHBOARD
+   ========================================================= */
+
+.intelligence-page {
+  min-height: 100vh;
+  width: 100%;
+  background: #f4f6f8;
+  color: #17212b;
+}
+
+
+/* =========================================================
+   CONTEXT BAR
+   ========================================================= */
+
+.intelligence-context-bar {
+  min-height: 48px;
+  padding: 0 28px;
+  background: #102f4f;
+  border-bottom: 1px solid #0a243d;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  color: #ffffff;
+}
+
+.intelligence-context-bar > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.intelligence-context-bar strong {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.intelligence-context-bar span {
+  color: #c7d3df;
+  font-size: 12px;
+}
+
+.intelligence-context-bar button {
+  min-height: 32px;
+  padding: 0 13px;
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 3px;
+
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.intelligence-context-bar button:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.intelligence-context-bar button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+
+/* =========================================================
+   MAIN SHELL
+   ========================================================= */
+
+.intelligence-shell {
+  width: 100%;
+  min-height: calc(100vh - 120px);
+
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.intelligence-sidebar {
+  min-height: calc(100vh - 120px);
+
+  background: #ffffff;
+  border-right: 1px solid #d9dfe5;
+
+  padding: 22px 13px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.intelligence-sidebar-title {
+  padding: 0 11px 17px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  color: #153d62;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.intelligence-sidebar button {
+  width: 100%;
+  min-height: 40px;
+
+  padding: 0 12px;
+  margin: 1px 0;
+
+  border: 0;
+  border-left: 3px solid transparent;
+  border-radius: 2px;
+
+  background: transparent;
+  color: #465462;
+
+  text-align: left;
+
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.intelligence-sidebar button:hover {
+  background: #f4f7fa;
+  color: #173f64;
+}
+
+.intelligence-sidebar button.active {
+  background: #edf3f8;
+  border-left-color: #1e5d8d;
+  color: #153f63;
+  font-weight: 700;
+}
+
+.intelligence-sidebar-label {
+  margin: 22px 11px 8px;
+
+  color: #8a949e;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+}
+
+.intelligence-source-note {
+  margin-top: auto;
+
+  padding: 14px 12px;
+
+  border-top: 1px solid #e3e7eb;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+
+  color: #6b7680;
+}
+
+.intelligence-source-note svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #56728c;
+}
+
+.intelligence-source-note p {
+  margin: 0;
+
+  font-size: 10.5px;
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.intelligence-main {
+  min-width: 0;
+  padding: 28px 30px 45px;
+}
+
+.intelligence-heading {
+  margin-bottom: 22px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.intelligence-heading h1 {
+  margin: 4px 0 6px;
+
+  color: #172b3d;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 29px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.intelligence-heading p {
+  max-width: 700px;
+
+  margin: 0;
+
+  color: #68747e;
+
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.intelligence-eyebrow {
+  color: #607a91;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   ERROR / LOADING
+   ========================================================= */
+
+.intelligence-message {
+  margin-bottom: 18px;
+  padding: 11px 14px;
+
+  border: 1px solid #dfb7b7;
+  border-left: 4px solid #9e3e3e;
+
+  background: #fffafa;
+  color: #783434;
+
+  font-size: 12px;
+}
+
+.intelligence-loading {
+  min-height: 420px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  color: #52606d;
+  font-size: 13px;
+}
+
+.spin {
+  animation: intelligence-spin 0.9s linear infinite;
+}
+
+@keyframes intelligence-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   SUMMARY STRIP
+   ========================================================= */
+
+.intelligence-summary-grid {
+  width: 100%;
+
+  margin-bottom: 22px;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  border: 1px solid #d9dfe5;
+  background: #ffffff;
+}
+
+.intelligence-summary-grid article {
+  min-width: 0;
+  min-height: 96px;
+
+  padding: 16px 19px;
+
+  border-right: 1px solid #e0e5e9;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.intelligence-summary-grid article:last-child {
+  border-right: 0;
+}
+
+.intelligence-summary-grid article > span {
+  margin-bottom: 7px;
+
+  color: #74808b;
+
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+}
+
+.intelligence-summary-grid article strong {
+  color: #163c5e;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.intelligence-summary-grid article small {
+  margin-top: 7px;
+
+  color: #929ba3;
+  font-size: 10.5px;
+}
+
+
+/* =========================================================
+   INDIA MAP — MAIN FEATURE
+   ========================================================= */
+
+.india-map-panel {
+  margin-bottom: 22px;
+
+  border: 1px solid #d4dbe2;
+  background: #ffffff;
+}
+
+.india-map-header {
+  min-height: 82px;
+  padding: 17px 20px;
+
+  border-bottom: 1px solid #dfe4e8;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.india-map-header h2 {
+  margin: 3px 0 3px;
+
+  color: #1b344b;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.india-map-header p {
+  margin: 0;
+
+  color: #7b858e;
+
+  font-size: 11.5px;
+  line-height: 1.4;
+}
+
+.india-map-controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+
+  flex-shrink: 0;
+}
+
+.india-map-controls label {
+  color: #65717c;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.india-map-controls select {
+  min-width: 145px;
+  height: 34px;
+
+  padding: 0 31px 0 10px;
+
+  border: 1px solid #cfd6dd;
+  border-radius: 2px;
+
+  background: #ffffff;
+  color: #273b4d;
+
+  outline: none;
+
+  font: inherit;
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.india-map-controls label:last-child select {
+  min-width: 90px;
+}
+
+.india-map-controls select:focus {
+  border-color: #547b9c;
+  box-shadow: 0 0 0 2px rgba(44, 93, 133, 0.08);
+}
+
+
+/* =========================================================
+   MAP LAYOUT
+   ========================================================= */
+
+.india-map-layout {
+  min-height: 590px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 270px;
+}
+
+.india-map-stage {
+  position: relative;
+
+  min-width: 0;
+  min-height: 590px;
+
+  padding: 18px;
+
+  border-right: 1px solid #dfe4e8;
+
+  background:
+    linear-gradient(
+      rgba(33, 76, 111, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(33, 76, 111, 0.025) 1px,
+      transparent 1px
+    ),
+    #f8fafb;
+
+  background-size: 30px 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.india-map-svg {
+  display: block;
+
+  width: 100%;
+  max-width: 720px;
+  height: 540px;
+
+  overflow: visible;
+}
+
+.india-state-shape {
+  vector-effect: non-scaling-stroke;
+
+  transition:
+    fill 0.14s ease,
+    opacity 0.14s ease,
+    stroke 0.14s ease;
+
+  cursor: pointer;
+}
+
+.india-state-shape:hover {
+  opacity: 0.78;
+  stroke: #183f60 !important;
+  stroke-width: 2px !important;
+}
+
+.india-state-shape.selected {
+  filter: drop-shadow(
+    0 1px 2px rgba(20, 49, 72, 0.22)
+  );
+}
+
+
+/* =========================================================
+   MAP LEGEND
+   ========================================================= */
+
+.india-map-legend {
+  position: absolute;
+  left: 22px;
+  bottom: 18px;
+
+  padding: 7px 9px;
+
+  border: 1px solid #d8dee4;
+  background: rgba(255, 255, 255, 0.94);
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  color: #707b85;
+
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.india-map-gradient {
+  width: 115px;
+  height: 7px;
+
+  border: 1px solid rgba(30, 67, 96, 0.12);
+
+  background: linear-gradient(
+    90deg,
+    #dceaf5 0%,
+    #bfd8ea 22%,
+    #96bdd8 42%,
+    #6199c1 62%,
+    #3376a7 80%,
+    #124f7d 100%
+  );
+}
+
+
+/* =========================================================
+   MAP EMPTY STATE
+   ========================================================= */
+
+.india-map-empty {
+  min-height: 420px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  color: #75808a;
+  text-align: center;
+}
+
+.india-map-empty svg {
+  color: #7891a5;
+}
+
+.india-map-empty strong {
+  color: #455b6d;
+  font-size: 13px;
+}
+
+.india-map-empty span {
+  max-width: 300px;
+
+  color: #8a949c;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   SELECTED STATE INSPECTOR
+   ========================================================= */
+
+.india-state-inspector {
+  padding: 23px 20px;
+
+  background: #ffffff;
+}
+
+.india-state-inspector h3 {
+  margin: 5px 0 18px;
+
+  color: #183a57;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.india-state-primary-value {
+  margin-bottom: 18px;
+  padding: 14px 0 17px;
+
+  border-top: 1px solid #e0e5e9;
+  border-bottom: 1px solid #e0e5e9;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.india-state-primary-value span {
+  color: #79838d;
+
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.india-state-primary-value strong {
+  color: #163f61;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 27px;
+  font-weight: 600;
+}
+
+.india-state-details {
+  margin: 0;
+  padding: 0;
+}
+
+.india-state-details > div {
+  min-height: 48px;
+
+  border-bottom: 1px solid #edf0f2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.india-state-details dt {
+  color: #707b85;
+
+  font-size: 10.5px;
+  line-height: 1.3;
+}
+
+.india-state-details dd {
+  margin: 0;
+
+  color: #263b4c;
+
+  font-size: 12px;
+  font-weight: 700;
+  text-align: right;
+}
+
+.india-state-no-data {
+  padding: 13px;
+
+  border: 1px solid #e1e5e9;
+  background: #f7f8f9;
+
+  color: #747f89;
+
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   GENERIC PANEL
+   ========================================================= */
+
+.intelligence-panel {
+  margin-bottom: 22px;
+
+  border: 1px solid #d6dde3;
+  background: #ffffff;
+}
+
+.intelligence-panel > header {
+  min-height: 68px;
+  padding: 13px 18px;
+
+  border-bottom: 1px solid #e0e5e9;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.intelligence-panel > header h2 {
+  margin: 3px 0 0;
+
+  color: #1d374e;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.intelligence-panel > header svg {
+  color: #55748e;
+}
+
+
+/* =========================================================
+   RANKING LIST
+   ========================================================= */
+
+.intelligence-ranking-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.intelligence-ranking-row {
+  min-height: 47px;
+
+  padding: 0 18px;
+
+  border-bottom: 1px solid #edf0f2;
+
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 12px;
+}
+
+.intelligence-ranking-row:last-child {
+  border-bottom: 0;
+}
+
+.intelligence-ranking-row:hover {
+  background: #fafbfc;
+}
+
+.intelligence-ranking-row .ranking-number {
+  color: #9aa3ab;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.intelligence-ranking-row strong {
+  color: #34495a;
+  font-weight: 600;
+}
+
+.intelligence-ranking-row > span:last-child {
+  color: #173e60;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.intelligence-table-panel {
+  overflow: hidden;
+}
+
+.intelligence-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.intelligence-table-wrap table {
+  width: 100%;
+  min-width: 850px;
+
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  background: #ffffff;
+}
+
+.intelligence-table-wrap thead {
+  background: #f3f5f7;
+}
+
+.intelligence-table-wrap th {
+  padding: 11px 13px;
+
+  border-bottom: 1px solid #d6dde3;
+
+  color: #64717c;
+
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.055em;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.intelligence-table-wrap td {
+  padding: 12px 13px;
+
+  border-bottom: 1px solid #e8ecef;
+
+  color: #4a5864;
+
+  font-size: 11.5px;
+  vertical-align: middle;
+}
+
+.intelligence-table-wrap tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.intelligence-table-wrap tbody tr:hover {
+  background: #f8fafb;
+}
+
+.intelligence-table-wrap td strong {
+  color: #253f54;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   CRIME TREND OVERVIEW
+   ========================================================= */
+
+.crime-trend-overview {
+  margin-bottom: 22px;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    42px
+    minmax(0, 1fr)
+    42px
+    minmax(0, 1fr);
+
+  align-items: stretch;
+}
+
+.crime-trend-overview article {
+  min-height: 128px;
+
+  padding: 20px;
+
+  border: 1px solid #d7dde3;
+  background: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.crime-trend-overview article > span {
+  margin-bottom: 7px;
+
+  color: #6e7d89;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.crime-trend-overview article strong {
+  color: #173e60;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.crime-trend-overview article small {
+  margin-top: 6px;
+
+  color: #8b949c;
+  font-size: 10.5px;
+}
+
+.crime-trend-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #82909b;
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   SCROLLBARS
+   ========================================================= */
+
+.intelligence-table-wrap::-webkit-scrollbar {
+  height: 8px;
+}
+
+.intelligence-table-wrap::-webkit-scrollbar-track {
+  background: #f0f2f4;
+}
+
+.intelligence-table-wrap::-webkit-scrollbar-thumb {
+  background: #bac4cc;
+  border-radius: 4px;
+}
+
+.intelligence-table-wrap::-webkit-scrollbar-thumb:hover {
+  background: #9ca9b4;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1180px) {
+  .intelligence-shell {
+    grid-template-columns: 205px minmax(0, 1fr);
+  }
+
+  .intelligence-main {
+    padding: 24px 22px 40px;
+  }
+
+  .india-map-layout {
+    grid-template-columns: minmax(0, 1fr) 235px;
+  }
+
+  .india-map-svg {
+    height: 500px;
+  }
+}
+
+
+@media (max-width: 980px) {
+  .intelligence-shell {
+    display: block;
+  }
+
+  .intelligence-sidebar {
+    min-height: auto;
+
+    padding: 10px 15px;
+
+    border-right: 0;
+    border-bottom: 1px solid #d9dfe5;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+
+    overflow-x: auto;
+  }
+
+  .intelligence-sidebar-title,
+  .intelligence-sidebar-label,
+  .intelligence-source-note {
+    display: none;
+  }
+
+  .intelligence-sidebar button {
+    width: auto;
+    min-width: max-content;
+
+    padding: 0 13px;
+
+    border-left: 0;
+    border-bottom: 2px solid transparent;
+  }
+
+  .intelligence-sidebar button.active {
+    border-left: 0;
+    border-bottom-color: #1e5d8d;
+  }
+
+  .intelligence-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .intelligence-summary-grid article:nth-child(2) {
+    border-right: 0;
+  }
+
+  .intelligence-summary-grid article:nth-child(-n + 2) {
+    border-bottom: 1px solid #e0e5e9;
+  }
+
+  .india-map-layout {
+    display: block;
+  }
+
+  .india-map-stage {
+    border-right: 0;
+    border-bottom: 1px solid #dfe4e8;
+  }
+
+  .india-state-inspector {
+    padding: 20px;
+  }
+
+  .india-state-details {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0 20px;
+  }
+}
+
+
+@media (max-width: 700px) {
+  .intelligence-context-bar {
+    padding: 8px 14px;
+  }
+
+  .intelligence-context-bar > div:first-child span {
+    display: none;
+  }
+
+  .intelligence-main {
+    padding: 19px 14px 35px;
+  }
+
+  .intelligence-heading h1 {
+    font-size: 24px;
+  }
+
+  .intelligence-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intelligence-summary-grid article {
+    border-right: 0;
+    border-bottom: 1px solid #e0e5e9;
+  }
+
+  .intelligence-summary-grid article:last-child {
+    border-bottom: 0;
+  }
+
+  .india-map-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .india-map-controls {
+    width: 100%;
+  }
+
+  .india-map-controls label {
+    flex: 1;
+  }
+
+  .india-map-controls select {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .india-map-stage {
+    min-height: 470px;
+    padding: 10px;
+  }
+
+  .india-map-svg {
+    height: 430px;
+  }
+
+  .india-state-details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .crime-trend-overview {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .crime-trend-connector {
+    transform: rotate(90deg);
+    height: 20px;
+  }
+}
+/* =========================================================
+   GOVERNMENT DATASET METADATA
+   ========================================================= */
+
+.dataset-metadata {
+  width: 100%;
+  margin-bottom: 22px;
+
+  display: grid;
+  grid-template-columns:
+    54px
+    minmax(190px, 1fr)
+    minmax(260px, 1.8fr)
+    minmax(190px, 1fr)
+    90px;
+
+  border: 1px solid #d6dde3;
+  background: #ffffff;
+}
+
+.dataset-metadata-icon {
+  min-height: 76px;
+
+  border-right: 1px solid #e0e5e9;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #315f83;
+  background: #f4f7f9;
+}
+
+.dataset-metadata-main,
+.dataset-metadata-item,
+.dataset-metadata-count {
+  min-width: 0;
+  min-height: 76px;
+
+  padding: 13px 16px;
+
+  border-right: 1px solid #e0e5e9;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.dataset-metadata-count {
+  border-right: 0;
+  align-items: center;
+  text-align: center;
+}
+
+.dataset-metadata span {
+  color: #84909a;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+}
+
+.dataset-metadata strong {
+  color: #30485b;
+
+  font-size: 11.5px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.dataset-metadata-main strong {
+  color: #173f60;
+}
+
+.dataset-metadata-count strong {
+  color: #173f60;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   GOVERNMENT DATA NOTE
+   ========================================================= */
+
+.government-data-disclaimer {
+  margin-top: -7px;
+  margin-bottom: 22px;
+
+  padding: 12px 15px;
+
+  border: 1px solid #d9e0e6;
+  border-left: 3px solid #557995;
+
+  background: #f8fafb;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  color: #65727d;
+}
+
+.government-data-disclaimer svg {
+  flex-shrink: 0;
+
+  margin-top: 1px;
+
+  color: #557995;
+}
+
+.government-data-disclaimer p {
+  margin: 0;
+
+  font-size: 10.5px;
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   RESPONSIVE METADATA
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .dataset-metadata {
+    grid-template-columns:
+      50px
+      1fr
+      1.5fr
+      1fr;
+  }
+
+  .dataset-metadata-count {
+    grid-column: 1 / -1;
+
+    min-height: 55px;
+
+    border-top: 1px solid #e0e5e9;
+
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding: 10px 16px;
+  }
+
+  .dataset-metadata-count strong {
+    font-size: 18px;
+  }
+}
+
+
+@media (max-width: 760px) {
+  .dataset-metadata {
+    display: block;
+  }
+
+  .dataset-metadata-icon {
+    display: none;
+  }
+
+  .dataset-metadata-main,
+  .dataset-metadata-item,
+  .dataset-metadata-count {
+    min-height: auto;
+
+    padding: 12px 14px;
+
+    border-right: 0;
+    border-bottom: 1px solid #e0e5e9;
+
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .dataset-metadata-count {
+    flex-direction: column;
+  }
+
+  .dataset-metadata-count:last-child {
+    border-bottom: 0;
+  }
+}

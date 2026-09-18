@@ -1,0 +1,19 @@
+{
+  "case": "CINTRA-SYN-023",
+  "synthetic": true,
+  "device_identifiers": [
+    "356938035643802"
+  ],
+  "phones": [
+    "9876500002",
+    "9876500069",
+    "9876500070",
+    "9876500071"
+  ],
+  "applications": [
+    "Messaging Client",
+    "Browser",
+    "Payments App"
+  ],
+  "extraction_note": "Synthetic device extraction summary for CINTRA demonstration."
+}

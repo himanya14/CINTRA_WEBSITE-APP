@@ -1,0 +1,1976 @@
+.relationship-page {
+  --navy: #071a4c;
+
+  --text: #0b1c3b;
+  --muted: #69758a;
+  --border: #dce3ec;
+  --background: #f5f7fa;
+
+  --red: #c83b35;
+  --blue: #1976d2;
+  --green: #2e8b57;
+  --purple: #7b4fc3;
+  --orange: #d97706;
+  --teal: #16858c;
+  --gold: #9a7b2f;
+  --grey: #64748b;
+
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: var(--background);
+  color: var(--text);
+
+  font-family:
+    "Trebuchet MS",
+    Calibri,
+    sans-serif;
+}
+
+.relationship-page *,
+.relationship-page *::before,
+.relationship-page *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   CONTEXT BAR
+   ========================================================= */
+
+.relationship-context-bar {
+  min-height: 52px;
+
+  padding: 0 28px;
+
+  position: relative;
+  z-index: 150;
+
+  background: var(--navy);
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.relationship-context-left {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  font-size: 14px;
+}
+
+.relationship-context-left button {
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+  color: white;
+
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.relationship-context-left button:hover {
+  text-decoration: underline;
+}
+
+.relationship-context-left span {
+  color: #aab7d0;
+}
+
+.relationship-context-left strong,
+.relationship-context-left b {
+  color: white;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.relationship-actions-wrap {
+  position: relative;
+
+  z-index: 500;
+}
+
+.relationship-actions-button {
+  height: 36px;
+
+  padding: 0 15px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.18
+    );
+
+  background: #0a245c;
+  color: white;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.relationship-actions-button:hover {
+  background: #11306e;
+}
+
+.relationship-actions-menu {
+  width: 215px;
+
+  padding: 6px;
+
+  position: absolute;
+
+  right: 0;
+  top: calc(100% + 6px);
+
+  border: 1px solid var(--border);
+
+  background: white;
+
+  box-shadow:
+    0 16px 38px
+    rgba(
+      8,
+      27,
+      65,
+      0.18
+    );
+}
+
+.relationship-actions-menu button {
+  width: 100%;
+  min-height: 40px;
+
+  padding: 0 10px;
+
+  border: 0;
+
+  background: white;
+  color: #193153;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  font: inherit;
+  font-size: 13.5px;
+
+  cursor: pointer;
+}
+
+.relationship-actions-menu button:hover {
+  background: #f3f6f9;
+}
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.relationship-message {
+  margin: 10px 17px 0;
+
+  padding: 10px 13px;
+
+  border: 1px solid #dfc36f;
+
+  background: #fff9e8;
+  color: #675018;
+
+  font-size: 13.5px;
+}
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.relationship-main {
+  width: 100%;
+
+  flex: 1;
+
+  min-height: 940px;
+
+  padding: 14px 17px;
+
+  display: grid;
+
+  grid-template-columns:
+    250px
+    minmax(720px, 1fr)
+    300px;
+
+  gap: 14px;
+}
+
+.relationship-main.details-closed {
+  grid-template-columns:
+    250px
+    minmax(720px, 1fr);
+}
+
+.relationship-filter-panel,
+.relationship-map-panel,
+.relationship-detail-panel {
+  min-width: 0;
+
+  border: 1px solid var(--border);
+
+  background: white;
+}
+
+/* =========================================================
+   FILTER PANEL
+   ========================================================= */
+
+.relationship-filter-panel {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.relationship-filter-section {
+  padding: 16px;
+}
+
+.relationship-filter-section
+  + .relationship-filter-section {
+  border-top: 1px solid var(--border);
+}
+
+.relationship-filter-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.relationship-filter-heading strong {
+  color: #13284b;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+.relationship-filter-heading svg {
+  color: #667990;
+}
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.relationship-search {
+  height: 40px;
+
+  margin-top: 14px;
+
+  padding: 0 10px;
+
+  border: 1px solid #d2d9e3;
+
+  background: #fafbfc;
+  color: #66758a;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.relationship-search:focus-within {
+  border-color: #7798bd;
+
+  background: white;
+}
+
+.relationship-search input {
+  min-width: 0;
+
+  flex: 1;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+  color: #1c3150;
+
+  font: inherit;
+  font-size: 13.5px;
+}
+
+/* =========================================================
+   ENTITY FILTERS
+   ========================================================= */
+
+.relationship-filter-list {
+  margin-top: 11px;
+}
+
+.relationship-filter-item {
+  min-height: 42px;
+
+  display: grid;
+
+  grid-template-columns:
+    17px
+    29px
+    minmax(0, 1fr)
+    30px;
+
+  align-items: center;
+
+  gap: 8px;
+
+  font-size: 13.5px;
+
+  cursor: pointer;
+}
+
+.relationship-filter-item:hover {
+  background: #fafbfc;
+}
+
+.relationship-filter-item input,
+.relationship-link-filter input {
+  width: 15px;
+  height: 15px;
+
+  margin: 0;
+
+  accent-color: #2371c6;
+}
+
+.relationship-filter-icon {
+  width: 28px;
+  height: 28px;
+
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  background: #e7effa;
+  color: #2769b6;
+}
+
+.relationship-filter-icon.people {
+  background: #e6eef8;
+  color: #2c639f;
+}
+
+.relationship-filter-icon.mobile-numbers {
+  background: #e1f0e8;
+  color: #2e7553;
+}
+
+.relationship-filter-icon.vehicles {
+  background: #f8eadc;
+  color: #b86b23;
+}
+
+.relationship-filter-icon.locations {
+  background: #eee8f7;
+  color: #6d50a5;
+}
+
+.relationship-filter-icon.bank-accounts {
+  background: #edf1df;
+  color: #657534;
+}
+
+.relationship-filter-icon.devices {
+  background: #e1eeee;
+  color: #317d83;
+}
+
+.relationship-filter-icon.cctv {
+  background: #eceff3;
+  color: #56687c;
+}
+
+.relationship-filter-icon.evidence {
+  background: #f4efdf;
+  color: #806b31;
+}
+
+.relationship-filter-icon.organisations {
+  background: #e9edf4;
+  color: #435b7b;
+}
+
+.relationship-filter-name {
+  min-width: 0;
+
+  color: #203451;
+
+  line-height: 1.3;
+
+  overflow-wrap: anywhere;
+}
+
+.relationship-filter-count {
+  min-width: 26px;
+
+  padding: 4px 5px;
+
+  border-radius: 14px;
+
+  background: #f0f2f5;
+  color: #697688;
+
+  text-align: center;
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   LINK FILTERS
+   ========================================================= */
+
+.relationship-link-filter-list {
+  margin-top: 10px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.relationship-link-filter {
+  min-height: 42px;
+
+  display: grid;
+
+  grid-template-columns:
+    17px
+    38px
+    minmax(0, 1fr)
+    18px;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #263954;
+
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+.relationship-link-filter small {
+  color: #8691a0;
+
+  font-size: 12px;
+
+  text-align: right;
+}
+
+.relationship-filter-line {
+  width: 34px;
+
+  border-top: 3px solid var(--grey);
+}
+
+.relationship-filter-line.financial {
+  border-color: var(--green);
+}
+
+.relationship-filter-line.communication {
+  border-color: var(--blue);
+}
+
+.relationship-filter-line.location {
+  border-color: var(--purple);
+}
+
+.relationship-filter-line.vehicle {
+  border-color: var(--orange);
+}
+
+.relationship-filter-line.device {
+  border-color: var(--teal);
+}
+
+.relationship-filter-line.cctv {
+  border-color: #6d7f95;
+}
+
+.relationship-filter-line.ownership {
+  border-color: var(--red);
+}
+
+.relationship-filter-line.general {
+  border-color: var(--grey);
+}
+
+.relationship-reset-button {
+  width: calc(100% - 32px);
+
+  height: 40px;
+
+  margin: 0 16px 16px;
+
+  border: 1px solid #d0d7e1;
+
+  background: white;
+  color: #10294e;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   MAP PANEL
+   ========================================================= */
+
+.relationship-map-panel {
+  min-height: 940px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+.relationship-map-heading {
+  min-height: 58px;
+
+  padding: 0 16px;
+
+  flex: 0 0 58px;
+
+  border-bottom: 1px solid var(--border);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.relationship-map-heading
+  > div:first-child {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.relationship-map-heading strong {
+  color: #12284a;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+.relationship-map-heading span {
+  color: #758196;
+
+  font-size: 12px;
+}
+
+.relationship-map-controls {
+  display: flex;
+
+  gap: 7px;
+}
+
+.relationship-map-controls button {
+  width: 36px;
+  height: 36px;
+
+  border: 1px solid #d5dbe4;
+
+  background: white;
+  color: #19365d;
+
+  display: grid;
+  place-items: center;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   CANVAS
+   ========================================================= */
+
+.relationship-canvas {
+  min-height: 880px;
+
+  flex: 1;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(
+        72,
+        94,
+        124,
+        0.13
+      )
+      0.8px,
+      transparent
+      0.9px
+    );
+
+  background-size: 22px 22px;
+}
+
+.relationship-stage {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform-origin: center center;
+}
+
+/* =========================================================
+   LINES
+   ========================================================= */
+
+.relationship-lines {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+.relationship-edge {
+  fill: none;
+
+  stroke-width: 2;
+
+  stroke-linecap: round;
+
+  stroke-dasharray: none;
+
+  vector-effect:
+    non-scaling-stroke;
+
+  opacity: 0.9;
+}
+
+/* =========================================================
+   NODE
+   ========================================================= */
+
+.relationship-node {
+  width: 166px;
+
+  min-height: 72px;
+
+  padding: 8px 9px;
+
+  position: absolute;
+
+  z-index: 20;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+
+  border: 1px solid #cbd6e2;
+
+  background: white;
+  color: #163252;
+
+  display: grid;
+
+  grid-template-columns:
+    47px
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: 9px;
+
+  text-align: left;
+
+  font: inherit;
+
+  box-shadow:
+    0 3px 12px
+    rgba(
+      12,
+      39,
+      75,
+      0.08
+    );
+
+  cursor: pointer;
+}
+
+.relationship-node.selected {
+  border: 2px solid #2b6db4;
+
+  box-shadow:
+    0 0 0 3px
+      rgba(
+        43,
+        109,
+        180,
+        0.08
+      );
+}
+
+/* =========================================================
+   WIDTHS
+   ========================================================= */
+
+.relationship-node-people {
+  width: 170px;
+}
+
+.relationship-node-mobile-numbers {
+  width: 182px;
+}
+
+.relationship-node-vehicles {
+  width: 174px;
+}
+
+.relationship-node-locations {
+  width: 174px;
+}
+
+.relationship-node-bank-accounts {
+  width: 182px;
+}
+
+.relationship-node-devices {
+  width: 182px;
+}
+
+.relationship-node-cctv {
+  width: 170px;
+}
+
+.relationship-node-evidence {
+  width: 176px;
+}
+
+.relationship-node-organisations {
+  width: 182px;
+}
+
+/* =========================================================
+   TOP ACCENTS
+   ========================================================= */
+
+.relationship-node-people {
+  border-top: 3px solid #507eb1;
+}
+
+.relationship-node-mobile-numbers {
+  border-top: 3px solid #2e8b57;
+}
+
+.relationship-node-vehicles {
+  border-top: 3px solid #d97706;
+}
+
+.relationship-node-locations {
+  border-top: 3px solid #7b4fc3;
+}
+
+.relationship-node-bank-accounts {
+  border-top: 3px solid #879833;
+}
+
+.relationship-node-devices {
+  border-top: 3px solid #16858c;
+}
+
+.relationship-node-cctv {
+  border-top: 3px solid #6d7f95;
+}
+
+.relationship-node-evidence {
+  border-top: 3px solid #9a7b2f;
+}
+
+.relationship-node-organisations {
+  border-top: 3px solid #536b8c;
+}
+
+/* =========================================================
+   AVATARS
+   ========================================================= */
+
+.relationship-node-avatar {
+  width: 47px;
+  height: 47px;
+
+  overflow: hidden;
+
+  border: 1px solid #c9d2dd;
+
+  background: #edf2f7;
+  color: #34597e;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 13.5px;
+  font-weight: 800;
+}
+
+.relationship-node-avatar.people {
+  border-radius: 2px;
+
+  background: #e6eef8;
+}
+
+.relationship-node-avatar.mobile-numbers {
+  border-radius: 50%;
+
+  background: #e2f1e9;
+  color: #2e7553;
+}
+
+.relationship-node-avatar.vehicles {
+  border-radius: 50%;
+
+  background: #faeee2;
+  color: #ae6526;
+}
+
+.relationship-node-avatar.locations {
+  border-radius: 50%;
+
+  background: #eee8f7;
+  color: #6d50a5;
+}
+
+.relationship-node-avatar.bank-accounts {
+  border-radius: 50%;
+
+  background: #eff3df;
+  color: #6f7e2d;
+}
+
+.relationship-node-avatar.devices {
+  border-radius: 50%;
+
+  background: #e2eeee;
+  color: #31797e;
+}
+
+.relationship-node-avatar.cctv {
+  background: #edf1f5;
+  color: #52677e;
+}
+
+.relationship-node-avatar img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+/* =========================================================
+   NODE TEXT
+   ========================================================= */
+
+.relationship-node-copy {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 6px;
+}
+
+.relationship-node-copy strong {
+  width: 100%;
+
+  color: #102647;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 13.5px;
+  font-weight: 800;
+
+  line-height: 1.2;
+
+  white-space: normal;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.relationship-node-copy small {
+  width: fit-content;
+
+  max-width: 100%;
+
+  padding: 4px 6px;
+
+  border: 1px solid #d2dae4;
+
+  background: #f6f8fb;
+  color: #455d78;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   PRIMARY
+   ========================================================= */
+
+.relationship-primary-node {
+  width: 202px;
+
+  min-height: 104px;
+
+  padding: 10px 11px;
+
+  position: absolute;
+
+  z-index: 40;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+
+  border: 2px solid #aa3934;
+
+  background: white;
+  color: #163252;
+
+  display: grid;
+
+  grid-template-columns:
+    65px
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: 12px;
+
+  text-align: left;
+
+  font: inherit;
+
+  box-shadow:
+    0 5px 17px
+    rgba(
+      12,
+      39,
+      75,
+      0.12
+    );
+
+  cursor: pointer;
+}
+
+.relationship-primary-avatar {
+  width: 65px;
+  height: 72px;
+
+  overflow: hidden;
+
+  border: 1px solid #ccd3db;
+
+  background: #edf1f5;
+
+  display: grid;
+  place-items: center;
+}
+
+.relationship-primary-avatar img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.relationship-primary-copy {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 8px;
+}
+
+.relationship-primary-copy strong {
+  color: #102f50;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.relationship-primary-copy small {
+  padding: 5px 7px;
+
+  border: 1px solid #dfb7b3;
+
+  background: #fff0ef;
+  color: #a53632;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   ZOOM
+   ========================================================= */
+
+.relationship-zoom {
+  height: 34px;
+
+  position: absolute;
+
+  left: 16px;
+  bottom: 16px;
+
+  z-index: 100;
+
+  border: 1px solid #d4dbe5;
+
+  background: white;
+
+  display: flex;
+  align-items: center;
+}
+
+.relationship-zoom button {
+  width: 34px;
+  height: 32px;
+
+  border: 0;
+
+  background: transparent;
+  color: #17385f;
+
+  font-size: 18px;
+
+  cursor: pointer;
+}
+
+.relationship-zoom span {
+  min-width: 46px;
+
+  color: #68768a;
+
+  text-align: center;
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   LEGEND
+   ========================================================= */
+
+.relationship-legend {
+  min-height: 42px;
+
+  padding: 7px 14px;
+
+  border-top: 1px solid var(--border);
+
+  background: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #7a8798;
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   RIGHT PANEL
+   ========================================================= */
+
+.relationship-detail-panel {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.relationship-detail-heading {
+  min-height: 58px;
+
+  padding: 0 16px;
+
+  border-bottom: 1px solid var(--border);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.relationship-detail-heading strong {
+  color: #17304f;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+.relationship-detail-heading button {
+  width: 30px;
+  height: 30px;
+
+  border: 0;
+
+  background: transparent;
+  color: #66758a;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   SELECTED ENTITY
+   ========================================================= */
+
+.relationship-selected-profile {
+  padding: 20px 16px;
+
+  border-bottom: 1px solid var(--border);
+
+  display: grid;
+
+  grid-template-columns:
+    70px
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+.relationship-selected-avatar {
+  width: 68px;
+  height: 76px;
+
+  overflow: hidden;
+
+  border: 1px solid #ccd5df;
+
+  background: #edf2f6;
+  color: #294d73;
+
+  display: grid;
+  place-items: center;
+
+  font-weight: 800;
+}
+
+.relationship-selected-avatar img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.relationship-selected-copy {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+.relationship-selected-copy
+  > span {
+  color: #8793a2;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+}
+
+.relationship-selected-copy h2 {
+  margin: 6px 0 9px;
+
+  color: #102c4e;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 19px;
+
+  overflow-wrap: anywhere;
+}
+
+.relationship-case-role {
+  padding: 4px 7px;
+
+  border: 1px solid #bdcfe3;
+
+  background: #f2f7fc;
+  color: #245f9a;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   DETAILS
+   ========================================================= */
+
+.relationship-detail-list {
+  padding: 8px 16px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.relationship-detail-row {
+  min-height: 48px;
+
+  padding: 9px 0;
+
+  border-bottom: 1px solid #edf0f3;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+}
+
+.relationship-detail-row span {
+  color: #788497;
+
+  font-size: 12px;
+}
+
+.relationship-detail-row strong {
+  max-width: 62%;
+
+  color: #173653;
+
+  text-align: right;
+
+  font-size: 13px;
+
+  overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   INTELLIGENCE
+   ========================================================= */
+
+.relationship-intelligence-section {
+  padding: 15px 16px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.relationship-intelligence-section h3,
+.relationship-connections h3 {
+  margin: 3px 0 12px;
+
+  color: #7b8796;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+.relationship-priority-empty {
+  color: #7a8796;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+.relationship-priority-note {
+  margin-top: 12px;
+
+  padding: 10px 11px;
+
+  border-left: 3px solid #c3a45d;
+
+  background: #faf8f1;
+  color: #68758a;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   CONNECTIONS
+   ========================================================= */
+
+.relationship-connections {
+  padding: 15px 16px;
+}
+
+.relationship-connections button {
+  width: 100%;
+
+  min-height: 58px;
+
+  padding: 9px 2px;
+
+  border: 0;
+  border-bottom: 1px solid #edf0f3;
+
+  background: transparent;
+
+  display: grid;
+
+  grid-template-columns:
+    5px
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 10px;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.relationship-connection-color {
+  width: 4px;
+  height: 34px;
+}
+
+.relationship-connection-copy {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.relationship-connection-copy strong {
+  color: #173653;
+
+  font-size: 13px;
+}
+
+.relationship-connection-copy small {
+  color: #778497;
+
+  font-size: 11px;
+
+  text-transform: uppercase;
+}
+
+.relationship-connections
+  button > b {
+  color: #53677e;
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   NOTE
+   ========================================================= */
+
+.relationship-review-note {
+  margin: 0 16px 16px;
+
+  padding: 11px;
+
+  border-left: 3px solid #b8902d;
+
+  background: #f5f6f8;
+  color: #5a687c;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 8px;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   EMPTY / LOADING
+   ========================================================= */
+
+.relationship-loading,
+.relationship-empty,
+.relationship-empty-details {
+  min-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  color: #758196;
+
+  font-size: 13.5px;
+
+  text-align: center;
+}
+
+.relationship-empty {
+  height: 100%;
+}
+
+/* =========================================================
+   SPIN
+   ========================================================= */
+
+.spin {
+  animation:
+    relationship-spin
+    0.8s linear
+    infinite;
+}
+
+@keyframes relationship-spin {
+  to {
+    transform:
+      rotate(360deg);
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (
+  max-width: 1450px
+) {
+  .relationship-main {
+    grid-template-columns:
+      225px
+      minmax(620px, 1fr)
+      270px;
+
+    gap: 10px;
+
+    padding: 11px;
+  }
+
+  .relationship-main.details-closed {
+    grid-template-columns:
+      225px
+      minmax(620px, 1fr);
+  }
+
+  .relationship-node {
+    width: 156px;
+
+    grid-template-columns:
+      43px
+      minmax(0, 1fr);
+  }
+
+  .relationship-node-avatar {
+    width: 43px;
+    height: 43px;
+  }
+
+  .relationship-node-devices,
+  .relationship-node-mobile-numbers,
+  .relationship-node-bank-accounts {
+    width: 170px;
+  }
+
+  .relationship-primary-node {
+    width: 192px;
+  }
+}
+
+@media (
+  max-width: 1150px
+) {
+  .relationship-main {
+    grid-template-columns:
+      210px
+      minmax(600px, 1fr);
+  }
+
+  .relationship-detail-panel {
+    grid-column: 1 / -1;
+
+    max-height: 520px;
+  }
+}
+
+@media (
+  max-width: 850px
+) {
+  .relationship-main,
+  .relationship-main.details-closed {
+    display: flex;
+
+    flex-direction: column;
+  }
+
+  .relationship-map-panel {
+    min-height: 900px;
+  }
+
+  .relationship-canvas {
+    min-height: 850px;
+  }
+}
+/* Expanded explainability: relationship edges are directly selectable. */
+.relationship-lines{pointer-events:auto}.relationship-edge{cursor:pointer;pointer-events:stroke}.relationship-edge:hover,.relationship-edge.selected{stroke-width:4;opacity:1}
+.relationship-edge-review-actions{padding:12px 16px;display:flex;gap:8px;border-top:1px solid #e4e8ee}.relationship-edge-review-actions button{height:31px;padding:0 12px;border:1px solid #173d70;background:#173d70;color:#fff;font-size:9px;font-weight:800;cursor:pointer}.relationship-edge-review-actions button.reject{background:#fff;color:#8f2834;border-color:#d8aeb3}.relationship-edge-review-actions button:disabled{opacity:.55;cursor:wait}.relationship-edge-review-message{margin:0 16px 10px;padding:8px 10px;background:#f7fbff;border:1px solid #cfdeed;color:#35516e;font-size:9px}
+
+
+/* =========================================================
+   FINAL CLEAN RELATIONSHIP MAP
+   ========================================================= */
+
+.relationship-map-panel {
+  min-height: 920px;
+  overflow: hidden;
+}
+
+.relationship-canvas,
+.relationship-canvas-dense,
+.relationship-canvas-very-dense {
+  min-height: 860px;
+  height: 860px;
+  overflow: hidden;
+}
+
+.relationship-stage,
+.relationship-stage-dense,
+.relationship-stage-very-dense {
+  width: 100%;
+  height: 100%;
+}
+
+/* Normal investigation cards */
+.relationship-node {
+  width: 158px;
+  min-height: 68px;
+  padding: 7px 8px;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 8px;
+  box-shadow:
+    0 2px 8px
+    rgba(12, 39, 75, 0.06);
+}
+
+.relationship-node-avatar {
+  width: 42px;
+  height: 42px;
+}
+
+.relationship-node-copy strong {
+  font-size: 12.5px;
+  line-height: 1.15;
+}
+
+.relationship-node-copy small {
+  padding: 3px 5px;
+  font-size: 8.5px;
+}
+
+/* Medium-dense cases */
+.relationship-stage-dense .relationship-node {
+  width: 142px;
+  min-height: 61px;
+  padding: 6px 7px;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 7px;
+}
+
+.relationship-stage-dense .relationship-node-avatar {
+  width: 36px;
+  height: 36px;
+}
+
+.relationship-stage-dense .relationship-node-copy strong {
+  font-size: 11px;
+}
+
+.relationship-stage-dense .relationship-node-copy small {
+  padding: 2px 4px;
+  font-size: 7.5px;
+}
+
+/* Very large cases */
+.relationship-stage-very-dense .relationship-node {
+  width: 126px;
+  min-height: 55px;
+  padding: 5px 6px;
+  grid-template-columns: 31px minmax(0, 1fr);
+  gap: 6px;
+}
+
+.relationship-stage-very-dense .relationship-node-avatar {
+  width: 31px;
+  height: 31px;
+}
+
+.relationship-stage-very-dense .relationship-node-copy {
+  gap: 3px;
+}
+
+.relationship-stage-very-dense .relationship-node-copy strong {
+  font-size: 9.5px;
+  line-height: 1.1;
+}
+
+.relationship-stage-very-dense .relationship-node-copy small {
+  padding: 2px 4px;
+  font-size: 6.8px;
+}
+
+/* Central investigation subject */
+.relationship-primary-node,
+.relationship-stage-dense .relationship-primary-node,
+.relationship-stage-very-dense .relationship-primary-node {
+  width: 198px;
+  min-height: 102px;
+  padding: 9px 10px;
+  grid-template-columns: 60px minmax(0, 1fr);
+  gap: 10px;
+}
+
+.relationship-primary-avatar,
+.relationship-stage-dense .relationship-primary-avatar,
+.relationship-stage-very-dense .relationship-primary-avatar {
+  width: 60px;
+  height: 66px;
+}
+
+.relationship-primary-copy strong {
+  font-size: 14.5px;
+}
+
+/* Relationship hierarchy:
+   selected edge > selected person's links > background links */
+.relationship-edge {
+  stroke-width: 1.2;
+  opacity: 0.38;
+  transition:
+    opacity 120ms ease,
+    stroke-width 120ms ease;
+}
+
+.relationship-edge.connected {
+  stroke-width: 1.7;
+  opacity: 0.78;
+}
+
+.relationship-edge.muted {
+  stroke-width: 1;
+  opacity: 0.18;
+}
+
+.relationship-edge.selected {
+  stroke-width: 3;
+  opacity: 1;
+}
+
+.relationship-stage-dense .relationship-edge.muted,
+.relationship-stage-very-dense .relationship-edge.muted {
+  opacity: 0.12;
+}
+
+.relationship-node,
+.relationship-primary-node {
+  z-index: 20;
+}
+
+.relationship-primary-node {
+  z-index: 35;
+}
+
+/* Keep all filter categories visible and aligned. */
+.relationship-filter-count {
+  font-variant-numeric:
+    tabular-nums;
+}
+
+.relationship-filter-panel,
+.relationship-detail-panel {
+  align-self: stretch;
+}
+
+
+/* =========================================================
+   COMPLETE ALL-ENTITY MAP
+   ========================================================= */
+
+/*
+ * The graph never hides entities.
+ * Dense cases therefore get smaller cards, not fewer cards.
+ */
+.relationship-map-panel {
+  min-height: 940px !important;
+  overflow: hidden !important;
+}
+
+.relationship-canvas,
+.relationship-canvas-dense,
+.relationship-canvas-very-dense {
+  min-height: 880px !important;
+  height: 880px !important;
+  overflow: hidden !important;
+}
+
+.relationship-stage,
+.relationship-stage-dense,
+.relationship-stage-very-dense {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Standard graph cards */
+.relationship-node {
+  width: 148px !important;
+  min-height: 62px !important;
+  padding: 7px 8px !important;
+  grid-template-columns: 38px minmax(0, 1fr) !important;
+  gap: 7px !important;
+}
+
+.relationship-node-avatar {
+  width: 38px !important;
+  height: 38px !important;
+}
+
+.relationship-node-copy strong {
+  font-size: 11.5px !important;
+  line-height: 1.12 !important;
+}
+
+.relationship-node-copy small {
+  font-size: 7.8px !important;
+  padding: 2px 4px !important;
+}
+
+/* 18+ entities */
+.relationship-stage-dense .relationship-node {
+  width: 128px !important;
+  min-height: 55px !important;
+  padding: 5px 6px !important;
+  grid-template-columns: 31px minmax(0, 1fr) !important;
+  gap: 5px !important;
+}
+
+.relationship-stage-dense .relationship-node-avatar {
+  width: 31px !important;
+  height: 31px !important;
+}
+
+.relationship-stage-dense .relationship-node-copy strong {
+  font-size: 9.5px !important;
+  line-height: 1.08 !important;
+}
+
+.relationship-stage-dense .relationship-node-copy small {
+  font-size: 6.6px !important;
+  padding: 2px 3px !important;
+}
+
+/* 26+ entities */
+.relationship-stage-very-dense .relationship-node {
+  width: 112px !important;
+  min-height: 49px !important;
+  padding: 4px 5px !important;
+  grid-template-columns: 27px minmax(0, 1fr) !important;
+  gap: 4px !important;
+}
+
+.relationship-stage-very-dense .relationship-node-avatar {
+  width: 27px !important;
+  height: 27px !important;
+}
+
+.relationship-stage-very-dense .relationship-node-copy strong {
+  font-size: 8.4px !important;
+  line-height: 1.05 !important;
+}
+
+.relationship-stage-very-dense .relationship-node-copy small {
+  font-size: 5.8px !important;
+  padding: 1px 3px !important;
+}
+
+/* Primary subject remains readable */
+.relationship-primary-node,
+.relationship-stage-dense .relationship-primary-node,
+.relationship-stage-very-dense .relationship-primary-node {
+  width: 184px !important;
+  min-height: 92px !important;
+  padding: 8px 9px !important;
+  grid-template-columns: 54px minmax(0, 1fr) !important;
+  gap: 9px !important;
+}
+
+.relationship-primary-avatar,
+.relationship-stage-dense .relationship-primary-avatar,
+.relationship-stage-very-dense .relationship-primary-avatar {
+  width: 54px !important;
+  height: 60px !important;
+}
+
+.relationship-primary-copy strong {
+  font-size: 13.5px !important;
+}
+
+/*
+ * All relationships remain in the graph, but unrelated ones are
+ * intentionally faint until their node is selected.
+ */
+.relationship-edge {
+  stroke-width: 1.1 !important;
+  opacity: 0.28 !important;
+}
+
+.relationship-edge.muted {
+  stroke-width: 0.9 !important;
+  opacity: 0.12 !important;
+}
+
+.relationship-edge.connected {
+  stroke-width: 1.65 !important;
+  opacity: 0.72 !important;
+}
+
+.relationship-edge.selected {
+  stroke-width: 3 !important;
+  opacity: 1 !important;
+}
+
+.relationship-stage-dense .relationship-edge.muted,
+.relationship-stage-very-dense .relationship-edge.muted {
+  opacity: 0.08 !important;
+}
+
+.relationship-node,
+.relationship-primary-node {
+  z-index: 20 !important;
+}
+
+.relationship-primary-node {
+  z-index: 35 !important;
+}
+
+
+/* =========================================================
+   SLIGHTLY DARKER RELATIONSHIP LINES
+   Keeps the map subtle, but improves visibility.
+   ========================================================= */
+
+.relationship-edge {
+  stroke-width: 1.2 !important;
+  opacity: 0.42 !important;
+}
+
+.relationship-edge.muted {
+  stroke-width: 1 !important;
+  opacity: 0.22 !important;
+}
+
+.relationship-edge.connected {
+  stroke-width: 1.8 !important;
+  opacity: 0.82 !important;
+}
+
+.relationship-edge.selected {
+  stroke-width: 3 !important;
+  opacity: 1 !important;
+}
+
+.relationship-stage-dense .relationship-edge.muted,
+.relationship-stage-very-dense .relationship-edge.muted {
+  opacity: 0.18 !important;
+}

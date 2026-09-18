@@ -1,0 +1,33 @@
+{
+  "case": "CINTRA-SYN-028",
+  "synthetic": true,
+  "locations": [
+    "Vasant Kunj, New Delhi"
+  ],
+  "observations": [
+    {
+      "at": "2026-09-14T02:30:00",
+      "location": "Vasant Kunj, New Delhi"
+    },
+    {
+      "at": "2026-09-13T23:30:00",
+      "location": "Vasant Kunj, New Delhi"
+    },
+    {
+      "at": "2026-09-13T20:30:00",
+      "location": "Vasant Kunj, New Delhi"
+    },
+    {
+      "at": "2026-09-13T17:30:00",
+      "location": "Vasant Kunj, New Delhi"
+    },
+    {
+      "at": "2026-09-13T14:30:00",
+      "location": "Vasant Kunj, New Delhi"
+    },
+    {
+      "at": "2026-09-13T11:30:00",
+      "location": "Vasant Kunj, New Delhi"
+    }
+  ]
+}

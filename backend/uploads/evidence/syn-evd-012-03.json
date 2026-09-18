@@ -1,0 +1,33 @@
+{
+  "case": "CINTRA-SYN-012",
+  "synthetic": true,
+  "locations": [
+    "Connaught Place, New Delhi"
+  ],
+  "observations": [
+    {
+      "at": "2026-09-14T02:30:00",
+      "location": "Connaught Place, New Delhi"
+    },
+    {
+      "at": "2026-09-13T23:30:00",
+      "location": "Connaught Place, New Delhi"
+    },
+    {
+      "at": "2026-09-13T20:30:00",
+      "location": "Connaught Place, New Delhi"
+    },
+    {
+      "at": "2026-09-13T17:30:00",
+      "location": "Connaught Place, New Delhi"
+    },
+    {
+      "at": "2026-09-13T14:30:00",
+      "location": "Connaught Place, New Delhi"
+    },
+    {
+      "at": "2026-09-13T11:30:00",
+      "location": "Connaught Place, New Delhi"
+    }
+  ]
+}

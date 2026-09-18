@@ -1,0 +1,14 @@
+{
+  "name": "cintra-fabric-gateway",
+  "version": "1.0.0",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.13.4",
+    "@hyperledger/fabric-gateway": "^1.8.0",
+    "express": "^5.1.0"
+  }
+}

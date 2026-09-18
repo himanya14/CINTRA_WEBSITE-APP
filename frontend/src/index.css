@@ -1,0 +1,1189 @@
+/* =========================================================
+   CINTRA — GLOBAL + HEADER STYLES
+   SINGLE SOURCE OF TRUTH
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL RESET
+   ========================================================= */
+
+html {
+  width: 100%;
+  min-height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  scroll-behavior: smooth;
+
+  background: #f8fafc;
+}
+
+body {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+
+  height: auto;
+
+  margin: 0;
+  padding: 0;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  background: #f8fafc;
+  color: #102448;
+
+  font-family:
+    "Trebuchet MS",
+    "Gill Sans",
+    Calibri,
+    sans-serif;
+
+  font-size: 14px;
+  line-height: 1.5;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+
+  height: auto;
+
+  margin: 0;
+  padding: 0;
+
+  overflow: visible;
+
+  background: #f8fafc;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  font-family: inherit;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #9aa6b5 #eef1f5;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #eef1f5;
+}
+
+body::-webkit-scrollbar-thumb {
+  border: 2px solid #eef1f5;
+  border-radius: 10px;
+
+  background: #9aa6b5;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #77869a;
+}
+
+
+/* =========================================================
+   FORM NORMALIZATION
+   ========================================================= */
+
+input,
+textarea,
+select {
+  color: #102448;
+}
+
+
+/* =========================================================
+   CINTRA APPLICATION HEADER
+   ========================================================= */
+
+.shared-app-header {
+  width: 100%;
+  height: 104px;
+  min-height: 104px;
+
+  display: grid;
+
+  grid-template-columns:
+    300px
+    minmax(0, 1fr)
+    275px;
+
+  align-items: stretch;
+
+  padding: 0 32px;
+
+  position: relative;
+  z-index: 1000;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #d8e0ea;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER — LEFT
+   ========================================================= */
+
+.shared-header-left {
+  height: 100%;
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.shared-brand {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+
+  margin: 0;
+  padding: 0;
+
+  border: 0 !important;
+  outline: none !important;
+
+  background: transparent !important;
+
+  color: #06194d;
+
+  cursor: pointer;
+}
+
+.shared-brand:hover,
+.shared-brand:focus,
+.shared-brand:active {
+  background: transparent !important;
+  outline: none !important;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.shared-cintra-symbol {
+  display: block;
+
+  width: 58px;
+  height: 58px;
+
+  min-width: 58px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   BRAND DIVIDER
+   ========================================================= */
+
+.shared-brand-divider {
+  display: block;
+
+  width: 1px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  background: #8795aa;
+}
+
+
+/* =========================================================
+   CINTRA WORDMARK
+   ========================================================= */
+
+.shared-brand-name {
+  color: #06194d;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 34px;
+  line-height: 1;
+
+  font-weight: 700;
+
+  letter-spacing: 0.4px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   HEADER — CENTER
+   ========================================================= */
+
+.shared-header-navigation {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+
+  overflow: visible;
+}
+
+
+/* =========================================================
+   TOP NAVIGATION
+   ========================================================= */
+
+.shared-top-navigation {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+
+  gap: 2px;
+
+  margin: 0;
+  padding: 0;
+
+  overflow: visible;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   NAVIGATION BUTTONS
+   ========================================================= */
+
+.shared-app-header
+.shared-top-navigation
+> button {
+  height: 100% !important;
+  min-height: 100% !important;
+
+  position: relative !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  flex: 0 0 auto;
+
+  margin: 0 !important;
+
+  padding:
+    0
+    13px !important;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+
+  outline: none !important;
+
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+
+  color: #172c4d !important;
+
+  font-family:
+    "Trebuchet MS",
+    "Gill Sans",
+    Calibri,
+    sans-serif;
+
+  font-size: 16px !important;
+  line-height: 1 !important;
+
+  font-weight: 500 !important;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  box-shadow: none !important;
+
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+
+/* =========================================================
+   REMOVE OLD NAV ::BEFORE
+   ========================================================= */
+
+.shared-app-header
+.shared-top-navigation
+> button::before {
+  content: none !important;
+
+  display: none !important;
+}
+
+
+/* =========================================================
+   NAV BAR BASE
+   ========================================================= */
+
+.shared-app-header
+.shared-top-navigation
+> button::after {
+  content: "" !important;
+
+  display: block !important;
+
+  position: absolute !important;
+
+  left: 11px !important;
+  right: 11px !important;
+
+  bottom: 0 !important;
+
+  width: auto !important;
+  height: 4px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+
+  background: transparent !important;
+
+  opacity: 1 !important;
+
+  transform: none !important;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   NAVIGATION HOVER
+
+   NO GREY RECTANGLE.
+   ========================================================= */
+
+.shared-app-header
+.shared-top-navigation
+> button:hover {
+  color: #06194d !important;
+
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+
+  box-shadow: none !important;
+}
+
+
+/* =========================================================
+   ACTIVE NAVIGATION
+
+   Home
+   Cases
+   Persons
+   Intelligence
+   Cross-Case
+   Legal
+   Search
+
+   ALL USE THIS SAME RULE.
+   ========================================================= */
+
+.shared-app-header
+.shared-top-navigation
+> button.active,
+.shared-app-header
+.shared-top-navigation
+> button.active:hover,
+.shared-app-header
+.shared-top-navigation
+> button.active:focus,
+.shared-app-header
+.shared-top-navigation
+> button.active:active {
+  color: #06194d !important;
+
+  font-weight: 700 !important;
+
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+
+  box-shadow: none !important;
+}
+
+
+/* =========================================================
+   GOLD ACTIVE BAR
+   ========================================================= */
+
+.shared-app-header
+.shared-top-navigation
+> button.active::after,
+.shared-app-header
+.shared-top-navigation
+> button.active:hover::after,
+.shared-app-header
+.shared-top-navigation
+> button.active:focus::after,
+.shared-app-header
+.shared-top-navigation
+> button.active:active::after {
+  content: "" !important;
+
+  display: block !important;
+
+  position: absolute !important;
+
+  left: 11px !important;
+  right: 11px !important;
+
+  bottom: 0 !important;
+
+  width: auto !important;
+  height: 4px !important;
+
+  background: #bd8f2c !important;
+  background-color: #bd8f2c !important;
+
+  opacity: 1 !important;
+
+  transform: none !important;
+}
+
+
+/* =========================================================
+   NAVIGATION FOCUS
+   ========================================================= */
+
+.shared-app-header
+.shared-top-navigation
+> button:focus {
+  outline: none !important;
+}
+
+.shared-app-header
+.shared-top-navigation
+> button:focus-visible {
+  outline: 2px solid #8799b3 !important;
+
+  outline-offset: -6px;
+}
+
+
+/* =========================================================
+   HEADER — RIGHT
+   ========================================================= */
+
+.shared-header-actions {
+  height: 100%;
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 13px;
+
+  padding-left: 18px;
+}
+
+
+/* =========================================================
+   HEADER ICON BUTTONS
+   ========================================================= */
+
+.shared-icon-button {
+  width: 42px;
+  height: 42px;
+
+  min-width: 42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  margin: 0;
+  padding: 0;
+
+  border: 0 !important;
+
+  border-radius: 50%;
+
+  outline: none;
+
+  background: transparent !important;
+
+  color: #06194d;
+
+  cursor: pointer;
+
+  box-shadow: none !important;
+}
+
+.shared-icon-button:hover {
+  background: #f1f4f8 !important;
+}
+
+.shared-icon-button:focus-visible {
+  outline: 2px solid #8799b3;
+
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   HEADER ACTION DIVIDER
+   ========================================================= */
+
+.shared-action-divider {
+  width: 1px;
+  height: 46px;
+
+  display: block;
+
+  flex-shrink: 0;
+
+  background: #d5dce6;
+}
+
+
+/* =========================================================
+   OFFICER AVATAR
+   ========================================================= */
+
+.shared-officer-avatar {
+  width: 52px;
+  height: 52px;
+
+  min-width: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: 2px solid #06194d;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #06194d;
+}
+
+
+/* =========================================================
+   OFFICER DETAILS
+   ========================================================= */
+
+.shared-officer-copy {
+  min-width: 115px;
+  max-width: 150px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.shared-officer-copy strong {
+  display: block;
+
+  overflow: hidden;
+
+  color: #06194d;
+
+  font-size: 15px;
+  line-height: 1.25;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+.shared-officer-copy span {
+  display: block;
+
+  margin-top: 3px;
+
+  overflow: hidden;
+
+  color: #68768b;
+
+  font-size: 13px;
+  line-height: 1.25;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   LOGOUT
+   ========================================================= */
+
+.shared-logout {
+  margin-left: 0;
+}
+
+
+
+
+/* =========================================================
+   RESPONSIVE — LARGE LAPTOP
+   ========================================================= */
+
+@media (max-width: 1500px) {
+
+  .shared-app-header {
+    grid-template-columns:
+      270px
+      minmax(0, 1fr)
+      220px;
+
+    padding:
+      0
+      24px;
+  }
+
+  .shared-brand {
+    gap: 17px;
+  }
+
+  .shared-cintra-symbol {
+    width: 54px;
+    height: 54px;
+
+    min-width: 54px;
+  }
+
+  .shared-brand-divider {
+    height: 44px;
+  }
+
+  .shared-brand-name {
+    font-size: 30px;
+  }
+
+  .shared-app-header
+  .shared-top-navigation
+  > button,
+  .shared-app-header
+  .shared-forensic-top-navigation
+  > button {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+
+    font-size: 15.5px !important;
+  }
+
+  .shared-officer-copy {
+    display: none;
+  }
+
+  .shared-header-actions {
+    gap: 10px;
+
+    padding-left: 12px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — SMALL LAPTOP
+   ========================================================= */
+
+@media (max-width: 1250px) {
+
+  .shared-app-header {
+    grid-template-columns:
+      90px
+      minmax(0, 1fr)
+      150px;
+
+    padding:
+      0
+      18px;
+  }
+
+  .shared-brand-divider,
+  .shared-brand-name {
+    display: none;
+  }
+
+  .shared-top-navigation,
+  .shared-forensic-top-navigation {
+    justify-content: flex-start;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scrollbar-width: none;
+  }
+
+  .shared-top-navigation::-webkit-scrollbar,
+  .shared-forensic-top-navigation::-webkit-scrollbar {
+    display: none;
+  }
+
+  .shared-app-header
+  .shared-top-navigation
+  > button,
+  .shared-app-header
+  .shared-forensic-top-navigation
+  > button {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+
+    font-size: 15px !important;
+  }
+
+  .shared-action-divider {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .shared-app-header {
+    height: 92px;
+    min-height: 92px;
+
+    grid-template-columns:
+      70px
+      minmax(0, 1fr)
+      105px;
+
+    padding:
+      0
+      12px;
+  }
+
+  .shared-cintra-symbol {
+    width: 48px;
+    height: 48px;
+
+    min-width: 48px;
+  }
+
+  .shared-officer-avatar {
+    display: none;
+  }
+
+  .shared-header-actions {
+    gap: 4px;
+
+    padding-left: 5px;
+  }
+
+  .shared-icon-button {
+    width: 40px;
+    height: 40px;
+
+    min-width: 40px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+  .shared-app-header {
+    height: 82px;
+    min-height: 82px;
+
+    grid-template-columns:
+      55px
+      minmax(0, 1fr)
+      45px;
+
+    padding:
+      0
+      7px;
+  }
+
+  .shared-cintra-symbol {
+    width: 42px;
+    height: 42px;
+
+    min-width: 42px;
+  }
+
+  .shared-header-actions
+  .shared-icon-button:not(.shared-logout) {
+    display: none;
+  }
+
+  .shared-app-header
+  .shared-top-navigation
+  > button,
+  .shared-app-header
+  .shared-forensic-top-navigation
+  > button {
+    padding-left: 9px !important;
+    padding-right: 9px !important;
+
+    font-size: 14px !important;
+  }
+}
+
+
+/* =========================================================
+   PRINT
+   ========================================================= */
+
+@media print {
+
+  html,
+  body,
+  #root {
+    width: 100%;
+
+    height: auto;
+    min-height: auto;
+
+    overflow: visible !important;
+
+    background: #ffffff;
+  }
+
+  .shared-app-header {
+    display: none !important;
+  }
+}
+
+
+/* =========================================================
+   FINAL COMPACT CINTRA HEADER
+   Keeps the header on one clean line and removes any
+   browser/default button appearance.
+   ========================================================= */
+
+@media (min-width: 1501px) {
+  .shared-app-header {
+    height: 78px !important;
+    min-height: 78px !important;
+    grid-template-columns: 270px minmax(0, 1fr) 250px !important;
+    padding: 0 24px !important;
+  }
+
+  .shared-brand {
+    gap: 14px !important;
+  }
+
+  .shared-cintra-symbol {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+  }
+
+  .shared-brand-divider {
+    height: 34px !important;
+  }
+
+  .shared-brand-name {
+    font-size: 29px !important;
+    line-height: 1 !important;
+  }
+
+  .shared-header-navigation,
+  .shared-top-navigation,
+  .shared-forensic-top-navigation {
+    height: 100% !important;
+  }
+
+  .shared-app-header .shared-top-navigation > button,
+  .shared-app-header .shared-forensic-top-navigation > button {
+    height: 100% !important;
+    min-height: 100% !important;
+    margin: 0 !important;
+    padding: 0 11px !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    color: #213753 !important;
+    font-size: 14px !important;
+    line-height: 1 !important;
+    font-weight: 600 !important;
+    box-shadow: none !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+  }
+
+  .shared-app-header .shared-top-navigation > button:hover,
+  .shared-app-header .shared-forensic-top-navigation > button:hover {
+    background: #f6f8fb !important;
+    color: #071b4d !important;
+  }
+
+  .shared-app-header .shared-top-navigation > button::after,
+  .shared-app-header .shared-forensic-top-navigation > button::after {
+    left: 10px !important;
+    right: 10px !important;
+    bottom: 0 !important;
+    height: 3px !important;
+  }
+
+  .shared-app-header .shared-top-navigation > button.active,
+  .shared-app-header .shared-forensic-top-navigation > button.active {
+    color: #071b4d !important;
+    font-weight: 700 !important;
+    background: transparent !important;
+  }
+
+  .shared-app-header .shared-top-navigation > button.active::after,
+  .shared-app-header .shared-forensic-top-navigation > button.active::after {
+    background: #bd8f2c !important;
+  }
+
+  .shared-header-actions {
+    gap: 9px !important;
+    padding-left: 12px !important;
+  }
+
+  .shared-icon-button {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+  }
+
+  .shared-action-divider {
+    height: 34px !important;
+  }
+
+  .shared-officer-avatar {
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+  }
+
+  .shared-officer-copy {
+    min-width: 95px !important;
+    max-width: 125px !important;
+  }
+
+  .shared-officer-copy strong {
+    font-size: 13px !important;
+  }
+
+  .shared-officer-copy span {
+    margin-top: 2px !important;
+    font-size: 11px !important;
+  }
+}
+
+@media (min-width: 1251px) and (max-width: 1500px) {
+  .shared-app-header {
+    height: 76px !important;
+    min-height: 76px !important;
+    grid-template-columns: 225px minmax(0, 1fr) 155px !important;
+    padding: 0 18px !important;
+  }
+
+  .shared-brand {
+    gap: 12px !important;
+  }
+
+  .shared-cintra-symbol {
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+  }
+
+  .shared-brand-divider {
+    height: 32px !important;
+  }
+
+  .shared-brand-name {
+    font-size: 26px !important;
+  }
+
+  .shared-app-header .shared-top-navigation > button,
+  .shared-app-header .shared-forensic-top-navigation > button {
+    height: 100% !important;
+    min-height: 100% !important;
+    margin: 0 !important;
+    padding: 0 8px !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    font-size: 13px !important;
+    line-height: 1 !important;
+    font-weight: 600 !important;
+    box-shadow: none !important;
+    appearance: none !important;
+  }
+
+  .shared-header-actions {
+    gap: 7px !important;
+    padding-left: 8px !important;
+  }
+
+  .shared-icon-button {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+  }
+
+  .shared-action-divider {
+    height: 30px !important;
+  }
+
+  .shared-officer-avatar {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+  }
+
+  .shared-officer-copy {
+    display: none !important;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1250px) {
+  .shared-app-header {
+    height: 72px !important;
+    min-height: 72px !important;
+    grid-template-columns: 66px minmax(0, 1fr) 118px !important;
+    padding: 0 12px !important;
+  }
+
+  .shared-brand-divider,
+  .shared-brand-name {
+    display: none !important;
+  }
+
+  .shared-cintra-symbol {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+  }
+
+  .shared-top-navigation,
+  .shared-forensic-top-navigation {
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scrollbar-width: none !important;
+  }
+
+  .shared-top-navigation::-webkit-scrollbar,
+  .shared-forensic-top-navigation::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .shared-app-header .shared-top-navigation > button,
+  .shared-app-header .shared-forensic-top-navigation > button {
+    height: 100% !important;
+    min-height: 100% !important;
+    margin: 0 !important;
+    padding: 0 9px !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    font-size: 12.5px !important;
+    line-height: 1 !important;
+    font-weight: 600 !important;
+    box-shadow: none !important;
+    appearance: none !important;
+  }
+
+  .shared-header-actions {
+    gap: 4px !important;
+    padding-left: 5px !important;
+  }
+
+  .shared-officer-copy,
+  .shared-action-divider {
+    display: none !important;
+  }
+
+  .shared-icon-button {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+  }
+
+  .shared-officer-avatar {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+  }
+}

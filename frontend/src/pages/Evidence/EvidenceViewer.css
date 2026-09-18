@@ -1,0 +1,1050 @@
+.evidence-viewer-page {
+  --navy: #06153c;
+  --navy-soft: #0b2459;
+
+  --text: #0e203e;
+  --muted: #69778c;
+
+  --border: #dce2e9;
+  --page: #f6f7f9;
+
+  --green: #34845c;
+  --blue: #2670c5;
+  --gold: #af8632;
+
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: var(--page);
+  color: var(--text);
+
+  font-family:
+    "Trebuchet MS",
+    Calibri,
+    sans-serif;
+}
+
+.evidence-viewer-page *,
+.evidence-viewer-page *::before,
+.evidence-viewer-page *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   TOP CONTEXT BAR
+   ========================================================= */
+
+.ev-context-bar {
+  min-height: 52px;
+
+  padding: 0 24px;
+
+  background: var(--navy);
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.ev-context-left {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  min-width: 0;
+}
+
+.ev-context-left button {
+  border: 0;
+  padding: 0;
+
+  background: transparent;
+  color: white;
+
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.ev-context-left span {
+  color: #94a7cc;
+}
+
+.ev-context-left strong {
+  font-size: 13px;
+}
+
+.ev-context-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.ev-context-actions button {
+  min-height: 36px;
+
+  padding: 0 14px;
+
+  border: 1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.12
+    );
+
+  border-radius: 4px;
+
+  background: #081c49;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.ev-context-actions button:hover:not(
+    :disabled
+  ) {
+  background: #0d285e;
+}
+
+.ev-context-actions button:disabled {
+  opacity: 0.4;
+
+  cursor: not-allowed;
+}
+
+.ev-context-actions
+  .ev-fullscreen-top {
+  width: 42px;
+
+  padding: 0;
+}
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.ev-main {
+  width: 100%;
+
+  padding: 15px 24px 24px;
+
+  flex: 1;
+}
+
+.ev-back-button {
+  margin-bottom: 14px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+  color: #344c68;
+
+  display: flex;
+  align-items: center;
+
+  gap: 3px;
+
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.ev-back-button:hover {
+  color: #0a2b54;
+}
+
+.ev-message {
+  margin-bottom: 14px;
+
+  padding: 10px 13px;
+
+  border: 1px solid #dcc789;
+
+  background: #fff9e9;
+  color: #735b23;
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   MAIN TWO COLUMN LAYOUT
+   ========================================================= */
+
+.ev-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 2fr)
+    400px;
+
+  gap: 14px;
+
+  align-items: start;
+}
+
+.ev-left-column,
+.ev-right-column {
+  min-width: 0;
+}
+
+.ev-left-column {
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+.ev-right-column {
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+/* =========================================================
+   COMMON CARD
+   ========================================================= */
+
+.ev-viewer-card,
+.ev-history-card,
+.ev-details-card,
+.ev-tags-card {
+  border: 1px solid var(--border);
+  border-radius: 5px;
+
+  background: white;
+
+  box-shadow:
+    0 2px 8px
+      rgba(15, 33, 61, 0.04);
+}
+
+/* =========================================================
+   MEDIA AREA
+   ========================================================= */
+
+.ev-media-area {
+  position: relative;
+
+  width: 100%;
+  height: 500px;
+
+  overflow: hidden;
+
+  background: #05080d;
+}
+
+.ev-media-overlay {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 20;
+
+  min-height: 50px;
+
+  padding: 14px 17px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(
+        0,
+        0,
+        0,
+        0.62
+      ),
+      transparent
+    );
+
+  color: white;
+
+  pointer-events: none;
+}
+
+.ev-media-overlay strong {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.ev-media-overlay span {
+  font-family:
+    "Courier New",
+    monospace;
+
+  font-size: 12px;
+
+  letter-spacing: 0.5px;
+}
+
+/* =========================================================
+   VIDEO
+   ========================================================= */
+
+.ev-video {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+
+  background: #05080d;
+}
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.ev-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+
+  background: #0a0f15;
+}
+
+/* =========================================================
+   PDF
+   ========================================================= */
+
+.ev-pdf {
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+
+  background: white;
+}
+
+/* =========================================================
+   AUDIO
+   ========================================================= */
+
+.ev-audio {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 13px;
+
+  background: #f4f6f8;
+  color: #173959;
+}
+
+.ev-audio strong {
+  font-size: 14px;
+}
+
+.ev-audio audio {
+  width: min(
+    600px,
+    calc(100% - 80px)
+  );
+
+  margin-top: 12px;
+}
+
+/* =========================================================
+   FALLBACK
+   ========================================================= */
+
+.ev-file-fallback {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  background: #f3f5f7;
+  color: #7c8999;
+}
+
+.ev-file-fallback strong {
+  color: #1e3b5a;
+
+  font-size: 14px;
+}
+
+.ev-file-fallback span {
+  font-size: 10px;
+}
+
+.ev-file-fallback button {
+  min-height: 37px;
+
+  margin-top: 8px;
+
+  padding: 0 13px;
+
+  border: 1px solid #cbd3dd;
+
+  background: white;
+  color: #173855;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   VIDEO TIMELINE
+   ========================================================= */
+
+.ev-video-timeline {
+  min-height: 102px;
+
+  padding: 13px 18px 15px;
+
+  position: relative;
+
+  border-top: 1px solid #d8dee6;
+
+  background: white;
+}
+
+.ev-timeline-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.ev-timeline-heading strong {
+  color: #183451;
+
+  font-size: 11px;
+}
+
+.ev-timeline-heading span {
+  color: #718095;
+
+  font-size: 9px;
+}
+
+.ev-timeline-control {
+  margin-top: 15px;
+
+  display: grid;
+
+  grid-template-columns:
+    45px
+    1fr
+    45px;
+
+  align-items: center;
+
+  gap: 11px;
+}
+
+.ev-timeline-control span {
+  color: #495b72;
+
+  font-size: 9px;
+}
+
+.ev-timeline-control
+  span:last-child {
+  text-align: right;
+}
+
+.ev-timeline-control input {
+  width: 100%;
+
+  accent-color: #2773d0;
+
+  cursor: pointer;
+}
+
+.ev-timeline-current {
+  width: fit-content;
+
+  margin: 6px auto 0;
+
+  padding: 4px 8px;
+
+  border-radius: 4px;
+
+  background: #246fc8;
+  color: white;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   EVIDENCE DETAILS
+   ========================================================= */
+
+.ev-details-card {
+  overflow: hidden;
+}
+
+.ev-card-heading {
+  min-height: 54px;
+
+  padding: 0 17px;
+
+  border-bottom: 1px solid var(--border);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ev-card-heading h2 {
+  margin: 0;
+
+  color: #142b4d;
+
+  font-size: 13px;
+}
+
+.ev-details-list {
+  padding: 10px 17px 5px;
+}
+
+.ev-detail-row {
+  min-height: 43px;
+
+  display: grid;
+
+  grid-template-columns:
+    23px
+    130px
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+.ev-detail-icon {
+  color: #465e7d;
+
+  display: grid;
+  place-items: center;
+}
+
+.ev-detail-label {
+  color: #59677b;
+
+  font-size: 10px;
+}
+
+.ev-detail-row strong {
+  min-width: 0;
+
+  overflow-wrap: anywhere;
+
+  color: #152c4b;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.ev-detail-status {
+  width: fit-content;
+
+  padding: 4px 8px;
+
+  border-radius: 12px;
+
+  background: #e8f4ec;
+  color: #27734c !important;
+}
+
+/* =========================================================
+   REMARKS
+   ========================================================= */
+
+.ev-remarks {
+  margin: 5px 17px 0;
+
+  padding: 14px 0;
+
+  border-top: 1px solid #e1e5ea;
+}
+
+.ev-remarks span {
+  color: #59677b;
+
+  font-size: 10px;
+}
+
+.ev-remarks p {
+  margin: 6px 0 0;
+
+  color: #273c55;
+
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+/* =========================================================
+   FILE BUTTONS
+   ========================================================= */
+
+.ev-file-buttons {
+  padding: 0 17px 17px;
+
+  display: flex;
+
+  gap: 8px;
+}
+
+.ev-file-buttons button,
+.ev-file-buttons a {
+  min-height: 36px;
+
+  padding: 0 12px;
+
+  border: 1px solid #ccd4de;
+
+  background: white;
+  color: #193753;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+.ev-file-buttons button:hover,
+.ev-file-buttons a:hover {
+  background: #f4f6f8;
+}
+
+/* =========================================================
+   TAGS
+   ========================================================= */
+
+.ev-tags-card {
+  min-height: 145px;
+}
+
+.ev-tags-empty {
+  padding: 20px 17px;
+
+  color: #7a8797;
+}
+
+.ev-tags-empty span {
+  color: #30465f;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.ev-tags-empty p {
+  margin: 7px 0 0;
+
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   HISTORY / CHAIN OF CUSTODY
+   ========================================================= */
+
+.ev-history-card {
+  padding: 15px 17px 17px;
+}
+
+.ev-history-card h2 {
+  margin: 0 0 17px;
+
+  color: #132b4b;
+
+  font-size: 13px;
+}
+
+.ev-history-track {
+  display: flex;
+
+  width: 100%;
+
+  padding: 0 14px;
+
+  justify-content: center;
+}
+
+.ev-history-step {
+  min-width: 0;
+
+  flex: 1;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.ev-history-visual {
+  width: 100%;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ev-history-icon {
+  width: 49px;
+  height: 49px;
+
+  position: relative;
+
+  z-index: 2;
+
+  border: 1px solid #88b79c;
+  border-radius: 50%;
+
+  background: #f5faf7;
+  color: #358459;
+
+  display: grid;
+  place-items: center;
+}
+
+.ev-history-line {
+  height: 1px;
+
+  width: calc(
+    100% - 49px
+  );
+
+  position: absolute;
+
+  left: calc(
+    50% + 24px
+  );
+
+  background: #79ae90;
+}
+
+.ev-history-step strong {
+  margin-top: 9px;
+
+  color: #22374f;
+
+  font-size: 10px;
+}
+
+.ev-history-step
+  > span:not(
+    .ev-history-visual
+  ) {
+  margin-top: 3px;
+}
+
+.ev-history-step span,
+.ev-history-step small {
+  color: #617083;
+
+  font-size: 9px;
+}
+
+.ev-history-step small {
+  margin-top: 2px;
+
+  color: #344b65;
+}
+
+.ev-history-empty {
+  padding: 24px;
+
+  color: #788696;
+
+  font-size: 10px;
+
+  text-align: center;
+}
+
+.ev-history-note {
+  margin: 16px 0 0;
+
+  color: #8692a0;
+
+  font-size: 8px;
+
+  text-align: center;
+}
+
+/* =========================================================
+   EMPTY / LOADING
+   ========================================================= */
+
+.ev-empty,
+.evidence-viewer-loading {
+  min-height: 500px;
+
+  margin: 15px 24px;
+
+  border: 1px solid var(--border);
+
+  background: white;
+  color: #768395;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+}
+
+.ev-empty {
+  margin: 0;
+}
+
+.ev-empty strong {
+  color: #223c58;
+}
+
+/* =========================================================
+   FULLSCREEN
+   ========================================================= */
+
+.ev-viewer-card:fullscreen {
+  width: 100vw;
+  height: 100vh;
+
+  border: 0;
+  border-radius: 0;
+
+  background: #05080d;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.ev-viewer-card:fullscreen
+  .ev-media-area {
+  height: auto;
+
+  flex: 1;
+}
+
+.ev-viewer-card:fullscreen
+  .ev-video-timeline {
+  flex: 0 0 auto;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.ev-footer {
+  min-height: 46px;
+
+  padding: 0 25px;
+
+  border-top: 1px solid var(--border);
+
+  background: white;
+  color: #667589;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr
+    1fr;
+
+  align-items: center;
+
+  font-size: 9px;
+}
+
+.ev-footer > div {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+}
+
+.ev-footer > span {
+  text-align: center;
+}
+
+.ev-footer
+  > div:last-child {
+  justify-content: flex-end;
+}
+
+/* =========================================================
+   LAPTOP
+   ========================================================= */
+
+@media (max-width: 1300px) {
+  .ev-layout {
+    grid-template-columns:
+      minmax(0, 1fr)
+      330px;
+  }
+
+  .ev-media-area {
+    height: 430px;
+  }
+
+  .ev-detail-row {
+    grid-template-columns:
+      22px
+      105px
+      minmax(0, 1fr);
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+  .ev-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .ev-right-column {
+    display: grid;
+
+    grid-template-columns:
+      1fr
+      1fr;
+  }
+
+  .ev-context-bar {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .ev-media-area {
+    height: 500px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+  .ev-main {
+    padding: 12px;
+  }
+
+  .ev-context-actions {
+    width: 100%;
+  }
+
+  .ev-context-actions button {
+    flex: 1;
+
+    padding: 0 7px;
+
+    font-size: 9px;
+  }
+
+  .ev-context-actions
+    .ev-fullscreen-top {
+    flex: 0 0 40px;
+  }
+
+  .ev-right-column {
+    display: flex;
+  }
+
+  .ev-media-area {
+    height: 330px;
+  }
+
+  .ev-history-track {
+    flex-direction: column;
+
+    gap: 14px;
+  }
+
+  .ev-history-line {
+    display: none;
+  }
+
+  .ev-footer {
+    padding: 10px 12px;
+
+    grid-template-columns: 1fr;
+
+    gap: 6px;
+
+    text-align: center;
+  }
+
+  .ev-footer > div {
+    justify-content: center !important;
+  }
+}

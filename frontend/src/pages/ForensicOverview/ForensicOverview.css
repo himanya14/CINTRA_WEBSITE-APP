@@ -1,0 +1,564 @@
+.forensic-overview {
+  padding: 34px 38px 42px;
+  color: #17243d;
+}
+
+.forensic-overview-heading {
+  margin-bottom: 25px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.forensic-overview-eyebrow,
+.forensic-section-label {
+  color: #69768c;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.forensic-overview-heading h1 {
+  margin: 7px 0 7px;
+  color: #10254b;
+  font-family: Georgia, serif;
+  font-size: 31px;
+  font-weight: 600;
+}
+
+.forensic-overview-heading p {
+  margin: 0;
+  color: #667085;
+  font-size: 13px;
+}
+
+.forensic-refresh-button {
+  height: 38px;
+  padding: 0 14px;
+  border: 1px solid #c8d1dd;
+  background: #fff;
+  color: #243958;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.forensic-refresh-button:hover {
+  background: #f7f8fa;
+}
+
+.forensic-refresh-button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+/* STATUS */
+
+.forensic-workspace-warning {
+  margin-bottom: 18px;
+  padding: 11px 14px;
+  border: 1px solid #e0c987;
+  background: #fffaf0;
+  color: #72571a;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 11px;
+}
+
+.forensic-workspace-loading {
+  min-height: 250px;
+  border: 1px solid #d9e0e9;
+  background: #fff;
+  color: #69768a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 12px;
+}
+
+/* WORKLOAD */
+
+.forensic-workload-strip {
+  margin-bottom: 20px;
+  border: 1px solid #d9e0e9;
+  background: #fff;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.forensic-workload-strip > div {
+  min-height: 89px;
+  padding: 17px 20px;
+  border-right: 1px solid #e1e6ed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.forensic-workload-strip > div:last-child {
+  border-right: 0;
+}
+
+.forensic-workload-strip span {
+  color: #657188;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.forensic-workload-strip strong {
+  margin: 3px 0 1px;
+  color: #0b2d59;
+  font-family: Georgia, serif;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.forensic-workload-strip small {
+  color: #8a94a5;
+  font-size: 10px;
+}
+
+/* GRID */
+
+.forensic-overview-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.65fr);
+  gap: 18px;
+}
+
+.forensic-work-panel {
+  min-width: 0;
+  border: 1px solid #d9e0e9;
+  background: #fff;
+}
+
+.forensic-panel-heading {
+  min-height: 72px;
+  padding: 16px 19px;
+  border-bottom: 1px solid #e0e5ec;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.forensic-panel-heading > svg {
+  flex-shrink: 0;
+  color: #a07827;
+}
+
+.forensic-panel-heading h2 {
+  margin: 4px 0 0;
+  color: #152c52;
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.forensic-panel-heading p {
+  margin: 4px 0 0;
+  color: #7b8697;
+  font-size: 10px;
+}
+
+/* CASE ROWS */
+
+.forensic-record-row {
+  width: 100%;
+  min-height: 74px;
+  padding: 12px 17px;
+  border: 0;
+  border-bottom: 1px solid #e6eaf0;
+  background: #fff;
+  color: inherit;
+  text-align: left;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 150px 20px;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.forensic-record-row:last-child {
+  border-bottom: 0;
+}
+
+.forensic-record-row:hover {
+  background: #f8fafc;
+}
+
+.forensic-record-row > svg {
+  color: #8b96a8;
+}
+
+.forensic-record-main {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.forensic-record-reference {
+  margin-bottom: 4px;
+  color: #9a7228;
+  font-family: Consolas, monospace;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.forensic-record-main strong {
+  overflow: hidden;
+  color: #183154;
+  font-size: 12px;
+  font-weight: 650;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.forensic-record-main span {
+  margin-top: 4px;
+  overflow: hidden;
+  color: #7b8698;
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.forensic-record-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.forensic-record-meta small {
+  color: #7c8798;
+  font-size: 9px;
+}
+
+.forensic-state {
+  color: #755e25;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.forensic-state.active {
+  color: #23613c;
+}
+
+/* ANALYST */
+
+.forensic-analyst-details {
+  padding: 8px 18px;
+}
+
+.forensic-analyst-details > div {
+  min-height: 47px;
+  border-bottom: 1px solid #edf0f4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.forensic-analyst-details span {
+  color: #778297;
+  font-size: 10px;
+}
+
+.forensic-analyst-details strong {
+  color: #223653;
+  font-size: 10px;
+  text-align: right;
+}
+
+.forensic-security-ok {
+  color: #276241 !important;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.forensic-status-divider {
+  height: 1px;
+  background: #dfe5ec;
+}
+
+.forensic-attention-block {
+  padding: 18px;
+}
+
+.forensic-attention-block > span {
+  color: #69768a;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.forensic-attention-block > strong {
+  margin: 3px 0;
+  color: #102d59;
+  font-family: Georgia, serif;
+  font-size: 28px;
+  display: block;
+}
+
+.forensic-attention-block p {
+  margin: 0 0 15px;
+  color: #7c8798;
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.forensic-attention-block button {
+  width: 100%;
+  min-height: 36px;
+  padding: 0 11px;
+  border: 1px solid #173761;
+  background: #173761;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font: inherit;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+/* EVIDENCE */
+
+.forensic-evidence-panel {
+  grid-column: 1;
+}
+
+.forensic-evidence-table-head,
+.forensic-evidence-table-row {
+  display: grid;
+  grid-template-columns:
+    minmax(90px, 0.7fr)
+    minmax(130px, 1fr)
+    minmax(90px, 0.8fr)
+    minmax(90px, 0.7fr)
+    minmax(120px, 1fr);
+  align-items: center;
+}
+
+.forensic-evidence-table-head {
+  min-height: 34px;
+  padding: 0 15px;
+  background: #f6f8fa;
+  border-bottom: 1px solid #dfe4eb;
+}
+
+.forensic-evidence-table-head span {
+  color: #68758a;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.forensic-evidence-table-row {
+  min-height: 49px;
+  padding: 0 15px;
+  border-bottom: 1px solid #e8ebef;
+  color: #596579;
+  font-size: 9px;
+}
+
+.forensic-evidence-table-row:last-child {
+  border-bottom: 0;
+}
+
+.forensic-evidence-table-row strong {
+  color: #17345c;
+  font-family: Consolas, monospace;
+  font-size: 9px;
+}
+
+/* ALERTS */
+
+.forensic-alert-panel {
+  grid-column: 2;
+}
+
+.forensic-clear-state {
+  min-height: 120px;
+  padding: 20px;
+  color: #34684b;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.forensic-clear-state div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.forensic-clear-state strong {
+  color: #254f3a;
+  font-size: 11px;
+}
+
+.forensic-clear-state span {
+  color: #7a8792;
+  font-size: 9px;
+}
+
+.forensic-alert-row {
+  padding: 13px 16px;
+  border-bottom: 1px solid #e8ebef;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.forensic-alert-row:last-child {
+  border-bottom: 0;
+}
+
+.forensic-alert-row svg {
+  margin-top: 1px;
+  flex-shrink: 0;
+  color: #a07827;
+}
+
+.forensic-alert-row div {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.forensic-alert-row strong {
+  color: #263b59;
+  font-size: 10px;
+}
+
+.forensic-alert-row span {
+  margin-top: 3px;
+  color: #7b8798;
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+/* EMPTY */
+
+.forensic-empty-state {
+  min-height: 210px;
+  padding: 25px;
+  color: #8993a2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.forensic-empty-state.compact {
+  min-height: 130px;
+}
+
+.forensic-empty-state strong {
+  margin-top: 10px;
+  color: #48576d;
+  font-size: 11px;
+}
+
+.forensic-empty-state span {
+  margin-top: 4px;
+  color: #8993a2;
+  font-size: 9px;
+}
+
+/* FOOTNOTE */
+
+.forensic-overview-footnote {
+  margin-top: 15px;
+  color: #8b94a3;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 9px;
+}
+
+/* SPINNER */
+
+.forensic-spin {
+  animation: forensic-spin 0.8s linear infinite;
+}
+
+@keyframes forensic-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1150px) {
+  .forensic-overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .forensic-evidence-panel,
+  .forensic-alert-panel {
+    grid-column: auto;
+  }
+
+  .forensic-workload-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .forensic-workload-strip > div:nth-child(2) {
+    border-right: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .forensic-overview {
+    padding: 24px 18px;
+  }
+
+  .forensic-overview-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .forensic-workload-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .forensic-workload-strip > div {
+    border-right: 0;
+    border-bottom: 1px solid #e1e6ed;
+  }
+
+  .forensic-record-row {
+    grid-template-columns: 1fr 20px;
+  }
+
+  .forensic-record-meta {
+    display: none;
+  }
+
+  .forensic-evidence-table {
+    overflow-x: auto;
+  }
+
+  .forensic-evidence-table-head,
+  .forensic-evidence-table-row {
+    min-width: 680px;
+  }
+}
+.forensic-status-badge{justify-self:end;padding:5px 8px;border:1px solid #cfd7e3;background:#f8fafc;color:#475569;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}.forensic-status-badge.completed{background:#f0fdf4;border-color:#bbd9c3;color:#28613a}.forensic-status-badge.in-progress{background:#eff6ff;border-color:#bfd4ef;color:#234f80}.forensic-status-badge.assigned{background:#fff8eb;border-color:#e4cf9c;color:#7a5b17}.forensic-record-main small{margin-top:4px;color:#788397;font-size:10px}.forensic-overview-link{width:100%;height:42px;border:0;border-top:1px solid #e3e8ef;background:#fafbfd;color:#173c70;display:flex;align-items:center;justify-content:center;gap:6px;font-size:11px;font-weight:700;cursor:pointer}.forensic-evidence-mini{width:100%;padding:12px 16px;border:0;border-bottom:1px solid #e6eaf0;background:#fff;text-align:left;display:flex;align-items:center;justify-content:space-between;color:#607086;cursor:pointer}.forensic-evidence-mini:hover{background:#f8fafc}.forensic-evidence-mini span{min-width:0;display:flex;flex-direction:column;gap:3px}.forensic-evidence-mini b{font-family:Consolas,monospace;color:#9a7228;font-size:9px}.forensic-evidence-mini strong{color:#183154;font-size:11px}.forensic-evidence-mini small{font-size:9px;color:#7c8799}.forensic-empty-mini{min-height:90px;display:flex;align-items:center;justify-content:center;gap:8px;color:#8490a2;font-size:11px;padding:18px}
