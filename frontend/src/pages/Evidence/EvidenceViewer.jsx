@@ -218,6 +218,17 @@ function getFileType(filePath) {
     return "audio";
   }
 
+  if (
+    [
+      "csv",
+      "txt",
+      "json",
+      "log",
+    ].includes(extension)
+  ) {
+    return "text";
+  }
+
   return "other";
 }
 
@@ -259,6 +270,19 @@ function EvidenceViewer() {
 
   const [secureObjectUrl, setSecureObjectUrl] =
     useState(null);
+
+  const [textPreview, setTextPreview] =
+    useState("");
+
+  const [
+    textPreviewLoading,
+    setTextPreviewLoading,
+  ] = useState(false);
+
+  const [
+    textPreviewError,
+    setTextPreviewError,
+  ] = useState("");
 
   const [
     videoDuration,
@@ -478,6 +502,97 @@ function EvidenceViewer() {
       selectedEvidence
         ?.file_path
     );
+
+  /* =======================================================
+     TEXT / CSV / JSON PREVIEW
+     ======================================================= */
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function loadTextPreview() {
+      if (
+        fileType !== "text" ||
+        !fileUrl
+      ) {
+        setTextPreview("");
+        setTextPreviewError("");
+        setTextPreviewLoading(false);
+        return;
+      }
+
+      try {
+        setTextPreviewLoading(true);
+        setTextPreviewError("");
+
+        const token = getToken();
+
+        const response =
+          await fetch(fileUrl, {
+            headers: token
+              ? {
+                  Authorization:
+                    `Bearer ${token}`,
+                }
+              : {},
+          });
+
+        if (!response.ok) {
+          throw new Error(
+            `Unable to load file preview (${response.status}).`
+          );
+        }
+
+        let content =
+          await response.text();
+
+        if (
+          fileExtension === "json"
+        ) {
+          try {
+            content =
+              JSON.stringify(
+                JSON.parse(content),
+                null,
+                2
+              );
+          } catch {
+            // Keep raw JSON text if parsing fails.
+          }
+        }
+
+        if (!cancelled) {
+          setTextPreview(content);
+        }
+      } catch (error) {
+        if (!cancelled) {
+          console.error(
+            "Evidence text preview:",
+            error
+          );
+
+          setTextPreview("");
+          setTextPreviewError(
+            "Preview could not be loaded."
+          );
+        }
+      } finally {
+        if (!cancelled) {
+          setTextPreviewLoading(false);
+        }
+      }
+    }
+
+    loadTextPreview();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [
+    fileUrl,
+    fileType,
+    fileExtension,
+  ]);
 
   /* =======================================================
      AUTHENTICATED SECURE EVIDENCE STREAM
@@ -959,6 +1074,55 @@ function EvidenceViewer() {
                               fileUrl
                             }
                           />
+                        </div>
+                      )}
+
+                      {fileType === "text" && (
+                        <div className="ev-text-preview">
+                          {textPreviewLoading ? (
+                            <div className="ev-text-preview-state">
+                              Loading file preview...
+                            </div>
+                          ) : textPreviewError ? (
+                            <div className="ev-text-preview-state">
+                              <FileText size={42} />
+
+                              <strong>
+                                {textPreviewError}
+                              </strong>
+
+                              <button
+                                type="button"
+                                onClick={() =>
+                                  window.open(
+                                    fileUrl,
+                                    "_blank",
+                                    "noopener,noreferrer"
+                                  )
+                                }
+                              >
+                                <ExternalLink size={15} />
+                                Open File
+                              </button>
+                            </div>
+                          ) : (
+                            <>
+                              <div className="ev-text-preview-header">
+                                <FileText size={17} />
+
+                                <strong>
+                                  {fileExtension
+                                    ? `${fileExtension.toUpperCase()} Preview`
+                                    : "File Preview"}
+                                </strong>
+                              </div>
+
+                              <pre className="ev-text-preview-content">
+                                {textPreview ||
+                                  "The file is empty."}
+                              </pre>
+                            </>
+                          )}
                         </div>
                       )}
 
