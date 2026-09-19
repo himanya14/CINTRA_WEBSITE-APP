@@ -2113,41 +2113,46 @@ function RelationshipAnalysis() {
           : `${API_BASE_URL}/cases/${caseId}`;
 
       const [
-        caseResponse,
-        analysisResponse,
-        personsResponse,
-      ] =
-        await Promise.all([
-          fetch(
-            caseRequestUrl,
-            {
-              headers,
-            }
-          ),
+  caseResponse,
+  analysisResponse,
+  personsResponse,
+  relationshipsResponse,
+] =
+  await Promise.all([
+    fetch(
+      caseRequestUrl,
+      {
+        headers,
+      }
+    ),
 
-          fetch(
-            `${API_BASE_URL}/intelligence/analysis/case/${caseId}`,
-            {
-              headers,
-            }
-          ),
+    fetch(
+      `${API_BASE_URL}/intelligence/analysis/case/${caseId}`,
+      {
+        headers,
+      }
+    ),
 
-          fetch(
-            `${API_BASE_URL}/persons/case/${caseId}`,
-            {
-              headers,
-            }
-          ),
-        ]);
+    fetch(
+      `${API_BASE_URL}/persons/case/${caseId}`,
+      {
+        headers,
+      }
+    ),
 
+    fetch(
+      `${API_BASE_URL}/relationships/case/${caseId}`,
+      {
+        headers,
+      }
+    ),
+  ]);
       if (
-        caseResponse.status ===
-          401 ||
-        analysisResponse.status ===
-          401 ||
-        personsResponse.status ===
-          401
-      ) {
+  caseResponse.status === 401 ||
+  analysisResponse.status === 401 ||
+  personsResponse.status === 401 ||
+  relationshipsResponse.status === 401
+){
         clearStoredAuth();
 
         navigate("/", {
@@ -2301,19 +2306,153 @@ function RelationshipAnalysis() {
           .result_json ||
         {};
 
-      const rawNodes =
-        Array.isArray(
-          result.nodes
-        )
-          ? result.nodes
-          : [];
+      let rawNodes =
+  Array.isArray(result.nodes)
+    ? result.nodes
+    : [];
 
-      const rawEdges =
-        Array.isArray(
-          result.edges
+let rawEdges =
+  Array.isArray(result.edges)
+    ? result.edges
+    : [];
+
+/*
+ * Fallback to persisted CINTRA relationship records when
+ * the saved intelligence analysis does not contain a graph.
+ */
+if (
+  rawNodes.length === 0 &&
+  rawEdges.length === 0 &&
+  relationshipsResponse.ok
+) {
+  const storedRelationships =
+    await relationshipsResponse.json();
+
+  if (Array.isArray(storedRelationships)) {
+    const nodeMap = new Map();
+
+    storedRelationships.forEach((relationship) => {
+      const sourceRef = String(
+        relationship.source_ref || ""
+      ).trim();
+
+      const targetRef = String(
+        relationship.target_ref || ""
+      ).trim();
+
+      if (sourceRef && !nodeMap.has(sourceRef)) {
+        const person =
+          personsData.find(
+            (item) =>
+              String(item.person_id) ===
+                sourceRef ||
+              String(item.id) ===
+                sourceRef
+          );
+
+        nodeMap.set(sourceRef, {
+          id: sourceRef,
+          label:
+            person?.name ||
+            sourceRef,
+          name:
+            person?.name ||
+            sourceRef,
+          type:
+            relationship.source_type ||
+            (person ? "Person" : "Entity"),
+          person_id:
+            person?.person_id ||
+            null,
+          profile_image_path:
+            person?.profile_image_path ||
+            null,
+        });
+      }
+
+      if (targetRef && !nodeMap.has(targetRef)) {
+        const person =
+          personsData.find(
+            (item) =>
+              String(item.person_id) ===
+                targetRef ||
+              String(item.id) ===
+                targetRef
+          );
+
+        nodeMap.set(targetRef, {
+          id: targetRef,
+          label:
+            person?.name ||
+            targetRef,
+          name:
+            person?.name ||
+            targetRef,
+          type:
+            relationship.target_type ||
+            (person ? "Person" : "Entity"),
+          person_id:
+            person?.person_id ||
+            null,
+          profile_image_path:
+            person?.profile_image_path ||
+            null,
+        });
+      }
+    });
+
+    rawNodes =
+      Array.from(nodeMap.values());
+
+    rawEdges =
+      storedRelationships
+        .filter(
+          (relationship) =>
+            relationship.source_ref &&
+            relationship.target_ref
         )
-          ? result.edges
-          : [];
+        .map(
+          (relationship) => ({
+            id:
+              relationship.relationship_id ||
+              relationship.id,
+
+            source:
+              String(
+                relationship.source_ref
+              ),
+
+            target:
+              String(
+                relationship.target_ref
+              ),
+
+            relationship:
+              relationship.relationship_type ||
+              "Linked",
+
+            relationship_type:
+              relationship.relationship_type ||
+              "Linked",
+
+            confidence:
+              relationship.confidence,
+
+            verification_status:
+              relationship.verification_status,
+
+            description:
+              relationship.description,
+
+            source_reference:
+              relationship.source,
+
+            synthetic:
+              relationship.synthetic,
+          })
+        );
+  }
+}
 
       const cleaned =
         cleanGraphData(
