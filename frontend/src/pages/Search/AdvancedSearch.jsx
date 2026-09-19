@@ -27,6 +27,7 @@ import AppHeader from "../../components/layout/AppHeader";
 import "./AdvancedSearch.css";
 
 const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL ||
   "http://127.0.0.1:8000";
 
 const SAVED_SEARCHES_KEY =
@@ -2953,3 +2954,4 @@ function SearchLibraryPanel({
 }
 
 export default AdvancedSearch;
+
