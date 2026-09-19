@@ -114,3 +114,4 @@ export default function CaseLegalPage(){
     </main>
   </div>
 }
+

@@ -371,3 +371,4 @@ export default function ForensicIntelligence() {
     </ForensicPageLayout>
   );
 }
+
